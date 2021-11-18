@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+                封装一个函数判断输入的数值是不是质数
+                返回值是质数返回值true
+                不是质数返回值false
+                返回值 true/false
+                参数 随机数
+            */
+            function func(num) {
+                let res = true
+                for (var i = 2; i <= num - 1; i++) {
+                    if (num % i === 0) {
+                        res = false
+                    }
+                }
+                return res
+            }
+            console.log(func(6))
+        </script>
+    </body>
+</html>

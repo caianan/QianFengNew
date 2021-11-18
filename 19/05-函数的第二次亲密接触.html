@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+                函数的第二次亲密接触,进化升级
+                    基本步骤:
+                        1.通过程序实现功能需求
+                        2.定义一个函数,function 函数名称(){}
+                        3.将程序完全定义在函数的{}中
+                    升级进化
+                        1.定义函数的执行结果返回值
+                            一个函数中 必须要通过关键词 return来定义函数的执行结果返回值。
+                            你定义的return之后的表达式，表示的数据是多少
+                            函数的执行结果返回值就是多少
+
+                            return的功能和作用
+                                a.定义函数程序的执行结果返回值，只有使用return定义的才是函数的执行结果返回值，才能被变量存储，才能操作使用。没有使用return定义函数执行结果返回值，都是undefined
+                                b.终止程序之后的执行
+                                定义在return之后的程序不会被执行，都会被终止
+                            总结：一个函数要么没有return返回值，要么只有一个return返回值
+                        
+            */
+            let arr = ['beijing', 'shanghai', 'guangzhou']
+            // 这个函数的效果式想数组的尾部新增一个数据单元
+            // 执行结果返回值是:变量存储的 新增单元只有新数组的长度也就是单元个数
+            // 执行结果的返回值:可以给变量存储,可以输出,可以弹窗等等,可以做任意的操作
+            let res = arr.push('shenzhen')
+            // 区分函数的执行效果和执行结果
+
+            console.log(arr) // ['beijing', 'shanghai', 'guangzhou', 'shenzhen']
+            console.log(res) //4
+
+            // 封装累加求和的函数
+            // 执行效果是将1-100所有整数累加求和,将结果输出到控制台
+            // 没有定义函数的返回值
+            // 如果使用变量存储，这个函数的执行结果的返回值是undefined
+            function add() {
+                let num = 0
+                for (let i = 1; i <= 100; i++) {
+                    num += i
+                }
+                // console.log(num)
+                // return 'I love you'
+                // 一般会将程序的执行结果，定义为函数的返回值
+                return num
+                // 定义在return之后的程序，不会执行。被return给终止了
+                // 如果定义多个return，也只会执行第一个return
+                console.log('after adding')
+            }
+            // 只有函数的执行程序和执行效果
+            // 并没有定义函数的执行结果返回值
+            // 如果使用变量存储，输出或者弹出就会undefined
+            // 当定义了return 函数的执行结果返回值，就是return之后 表达式的内容
+            // 变量中存储的也就是这个呢日哦那个，也就是res2中存储的就是这个字符串内容
+            let res2 = add()
+            console.log(res2) //undefined
+            // 没有定义return res2 ，控制台 警告框 弹出都是undefined
+        </script>
+    </body>
+</html>
