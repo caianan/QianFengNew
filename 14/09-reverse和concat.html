@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+            arr.reverse()
+                将数组倒叙排列
+                操作效果是将数组单元数据,倒叙排列
+                操作返回值也是倒叙排列的新数组
+            arr.concat();   
+                数组拼接
+                不会改变原数组,返回的是新数组
+        */
+            let arr = [1, 2, 3, 4, 5]
+            console.log(arr.reverse()) //[5, 4, 3, 2, 1]
+            console.log(arr) //[5, 4, 3, 2, 1]
+            let arrOne = [1, 2, 3]
+            let arrTwo = [4, 5, 6]
+            let arrThree = [7, 8, 9]
+            let arrFour = [10, 11, 12]
+            console.log(arrOne.concat(arrTwo)) // [1, 2, 3, 4, 5, 6]
+            console.log(arrOne) //[1, 2, 3]
+            console.log(arrTwo) //[4, 5, 6]
+            console.log('===========')
+            // 将 小括号中 所有的数组的数据获取,拼接给arrOne
+            // 不会改变arrOne的原始内容,返回值 是拼接之后的新数据
+            // 括号中的顺序就是拼接的顺序
+            console.log(arrOne.concat(arrTwo, arrThree, arrFour)) //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        </script>
+    </body>
+</html>

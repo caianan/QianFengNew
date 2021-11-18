@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				if 和switch 都是分支结构语句
+					作用都是根据条件执行判断,运行不同的程序
+					if判断 适用于 范围的判断 判断嵌套
+					switch 适用于 判断变量存储的是否是某一个固定值,不适用于嵌套
+					
+					switch程序,一定可以转化为if程序
+					if程序,不是一定都能转化为switch程序
+				
+				while 和 for循环 都是循环语句
+					本质上while语句 和 for语句在执行原理上没有任何区别
+					一个while循环一定可以写成for循环
+					一个for循环一定可以写成while循环
+				只是因为for循环和while循环的语法形式不同,适用环境不同
+					while循环更适用于死循环和未知循环次数的循环
+					for循环更适用于已知循环次数的循环和循环嵌套
+			*/
+			// for循环和while循环一定可以相互转化
+
+			// 输出1-100所有可以被2 和3 整除的数值
+			let i = 6
+			while (i <= 100) {
+				console.log(i)
+				i += 6
+			}
+			console.log('=============')
+			// for循环
+			for (var j = 6; j <= 100; j += 6) {
+				console.log(j)
+			}
+			console.log(j)
+		</script>
+	</body>
+</html>

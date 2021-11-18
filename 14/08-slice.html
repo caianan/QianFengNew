@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+            arr.slice(参数1;参数2);    
+                数组单元的截取
+                    参数1:截取数组单元起始位置的索引下标
+                    参数2:截取数组单元结束位置的索引下标
+                    截取的结果是一个新的数组
+                    截取的内容:包括起始索引下标数据,不包括结束索引下标数据(留头去尾)
+                    如果只定义一个参数,截取到数组的最后一个单元
+                数组截取,原始数组内容不会改变
+                数组截取,操作的返回结果,是截取内容,是一个新的数组
+            */
+            let arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+            // 截取从索引下标是2的位置开始,到 索引下标是5的位置结束
+            // 截取内容包括索引下标是2的位置,存储的数据c
+            // 截取内容不包括索引下标是5的位置,存储的数据f
+            let res = arr.slice(2, 5)
+            console.log(res) //[('c', 'd', 'e')]
+            console.log(arr) //['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+            // 如果只写一个参数是从索引下标是2的位置开始截取至数组的最后一个单元,最后一个单元也会包括在内
+            console.log(arr.slice(2)) //['c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+            console.log(arr.slice(-3, -1))
+        </script>
+    </body>
+</html>

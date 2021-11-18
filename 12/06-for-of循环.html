@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                for...of 循环
+                自定义变量中存储的是数组单元的数据数值
+                for(var 自定义变量 of 数组){
+                    执行程序
+                }
+                注意：不能循环遍历对象，只能循环遍历数组
+            */
+            let arrs = ['Beijing', 'Shanghai', 'Shenzhen', 'Guanzhou']
+            // arr中存储的是，每一个数据单元的数值
+            for (let arr of arrs) {
+                console.log(arr)
+            }
+
+            let obj = {
+                name: 'Jack',
+                age: 18,
+                sex: 'Male',
+            }
+            for (let value of obj) {
+                console.log(value)
+            }
+        </script>
+    </body>
+</html>

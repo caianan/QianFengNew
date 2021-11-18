@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				按照参与运算符元素个数划分,运算符可以分为
+					一元
+						只有一个单元/元素参与运算符的执行
+							! 逻辑非
+							++
+							--
+					二元
+						有两个单元参与运算符的执行
+							数学运算符 比较运算符 赋值运算符 逻辑运算符(&& ||)
+					三元
+						表达式? 执行程序1 : 执行程序2
+							表达式结果是true ,执行程序1
+							表达式结果是false,执行程序2
+							三元运算符 执行原理 与简单的if....else相同
+							
+			*/
+
+			let a = 10
+			if (a % 2 === 0) {
+				console.log('偶数')
+			} else {
+				console.log('奇数')
+			}
+
+			// 三元运算符表达式
+			a % 2 === 0 ? console.log('偶数') : console.log('奇数') //偶数
+			// 设定内容
+			// console.log() 输出内容是三元运算符的执行结果
+			// 如果a%2===0 结果是true,三元运算符,执行结果就是第一个程序定义的内容:偶数;如果a%2===0 结果是false,三元运算符,执行结果就是第二个程序定义的内容:奇数
+			console.log(a % 2 === 0 ? '偶数' : '奇数') //偶数
+
+			// 给变量赋值
+			// a % 2 === 0 执行结果是true,将偶数给变量res赋值
+			// a % 2 === 0 执行结果是false,将奇数给变量res赋值
+			let res = a % 2 === 0 ? '偶数' : '奇数'
+			console.log(res)
+
+			// 配合模板字符串使用
+			// 模板字符串会解析表达式,执行表达式
+			let resCheck = true;
+			let str = `<input type="checkbox" ${resCheck?'checked':''}></input>`
+			console.log(str)
+
+			// 练习:有一个数值,范围是1000-9999.两个条件,只要数值可以满足任意一个条件,就输出OK;两个条件,都不满足输出No.条件一:可以被100整除,条件二:可以被4整除,但是不能被100整除
+			let year = 2020
+			if ((year % 100 === 0) || (year % 4 === 0 && year % 100 !== 0)) {
+				console.log('Yes')
+			} else {
+				console.log('No')
+			}
+			console.log((year % 100 === 0) || (year % 4 === 0 && year % 100 !== 0) ? 'Yes' : 'No')
+		</script>
+	</body>
+</html>

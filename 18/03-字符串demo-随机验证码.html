@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				随机验证码:英文大小写字母+数字
+				如果现在需要生成一组六位的随机验证码
+				思路:
+					循环6次,获取6个随机字符写入到新的字符串中
+					可以先创建一个字符串包括所有的验证码字符
+					每次从这个字符串中获取一个随机字符拼接在新的字符串中
+			*/
+			let str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
+			let strNew = ''
+			// 使用while循环来计算
+			while (true) {
+				let index = parseInt(Math.random() * (str.length - 1 + 1))
+				// strNew.indexOf(str[index]) === -1 证明没有这个随机索引下标对应的字符,这样就加入到新的字符串中
+				if (strNew.indexOf(str[index]) === -1) {
+					strNew += str[index]
+				}
+				if (strNew.length === 6) {
+					break
+				}
+			}
+
+			console.log(strNew)
+			// 使用for循环来计算
+			let strNewTwo = ''
+			for (var i = 0; i < 6; i++) {
+				let indexTwo = parseInt(Math.random() * (str.length - 1 + 1))
+				if (strNewTwo.indexOf(str[indexTwo]) === -1) {
+					strNewTwo += str[indexTwo]
+				} else {
+					// 这样就不会出现少一个验证码的情况了
+					i--
+				}
+			}
+			console.log(strNewTwo)
+		</script>
+	</body>
+</html>

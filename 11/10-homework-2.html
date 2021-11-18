@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				作业2:
+					100秒应该是1 分40秒
+					1000秒应该是16分40秒
+					10000000秒应该是xxx天xxX小时XX分钟XXX秒
+			*/
+			let secondRes = 100000000
+			let second = secondRes
+			let day = 0
+			let hours = 0
+			let minutes = 0
+			console.log(`一天${60*60*24}s`) //一天86400s
+			console.log(`一小时${60*60}s`) //一小时3600s
+			console.log(`一分钟${60}s`) //一分钟60s
+			if (parseInt(second / (60 * 60 * 24)) > 0) {
+				day = parseInt(second / (60 * 60 * 24))
+				second -=  day * (60 * 60 * 24)
+			} 
+			
+			if (parseInt(second / (60 * 60 )) > 0) {
+				hours = parseInt(second / (60 * 60))
+				second -= hours * (60 * 60)
+			}
+			
+			if (parseInt(second / 60) > 0) {
+				minutes = parseInt(second / 60)
+				second -= minutes * 60
+			}
+			console.log(`${secondRes}秒应该是${day}天${hours}小时${minutes}分钟`)
+		</script>
+	</body>
+</html>

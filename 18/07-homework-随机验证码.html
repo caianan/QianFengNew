@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 随机验证码
+            // 使用for循环来做
+            let str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+            let strNew = ''
+            for (let i = 0; i < 6; i++) {
+                let index = parseInt(Math.random() * (str.length - 1 + 1))
+                if (strNew.indexOf(str[index]) === -1) {
+                    strNew += str[index]
+                } else {
+                    i--
+                }
+            }
+            console.log(strNew)
+
+            let strNewTwo = ''
+            let str2 = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+            while (true) {
+                let indexTwo = parseInt(Math.random() * (str2.length - 1 + 1))
+                if (strNewTwo.indexOf(str2[indexTwo]) === -1) {
+                    strNewTwo += str2[indexTwo]
+                }
+                if (strNewTwo.length === 6) {
+                    break
+                }
+            }
+            console.log(strNewTwo)
+        </script>
+    </body>
+</html>

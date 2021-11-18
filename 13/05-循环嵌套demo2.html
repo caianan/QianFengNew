@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				像页面输出
+				*				第一行生成*和空格的循环执行了1次
+				* *				第二行生成*和空格的循环执行了2次
+				* * *			第三行生成*和空格的循环执行了3次
+				* * * *			第四行生成*和空格的循环执行了4次
+				* * * * *		第五行生成*和空格的循环执行了5次			
+				也就是行数不同,内层循环执行的次数不同
+				内层循环执行的次数就是当前的行数
+				
+				外层循环实际的执行效果 是生成行
+				外层循环 一次 就会有 一行内容
+				
+			*/
+		    // 先生成一行内容,然后循环5次
+			for (let j = 1; j <= 5; j++) {
+				for (let i = 1; i <=j ; i++) {
+					document.write(`* `)
+				}
+				document.write(`<br>`)
+			}
+		</script>
+	</body>
+</html>

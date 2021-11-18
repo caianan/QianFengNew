@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				循环中的break和continue
+					break 在switch语句中也有,作用是中止switch程序的穿越执行
+				循环中也有 break,作用是
+					1.终止循环程序中,之后程序内容的执行
+					2.终止之后循环次数的执行
+				循环中continue的作用
+					1.终止循环程序中,之后程序内容的执行
+					2.继续之后循环次数的执行
+			*/
+		    for (var i = 1; i <= 5; i++) {
+				// i === 3时,判断为true,执行break程序.
+				// 首先break会终止,在break之后循环的程序,console.log(i)不会执行了
+				// 没有3是因为break终止之后的程序console.log(i)的输出
+				// 没有4是因为break 终止了 之后的循环
+				if(i === 3){
+					break;
+				}
+		    	console.log(i) // 1 2
+		    }
+			console.log('========================')
+			for (var j = 1; j <=5; j++) {
+				if (j===3) {
+					continue;
+				}
+				console.log(j)// 1 2 4 5
+			}
+		</script>
+	</body>
+</html>

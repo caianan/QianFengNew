@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				作业:
+					1.掌握冒泡排序和选择排序的核心思想和优化点
+					2.掌握补充的数组方法和对象删除单元操作
+			*/
+			let arr = [1, 2, 5, 4, 6, 7, 8, 9, 64, 4]
+			// 使用冒泡算法让arr数组从大到小排列
+			// 冒泡算法的核心:让相邻的两个数进行比较,如果后一个数大于前一个数,将两个数对换位置,这样内循环一次,最后的这个数就是最小的那个数
+			// 优化点1:循环arr.length-1-1次就可以了,因为循环到这样的时候就已经是从小道大的顺序了,不用再循环arr.length-1次了
+			for (let j = 0; j < arr.length - 1; j++) {
+				// 优化点二:arr.length - 1-1是应为要和arr[i+1]比较,如果是arr.length的话,就超出数组的长度了
+				// 优化点三:arr.length - 1-1,因为循环一次就可以确定一个最小的数,所以循环几次,就减去j次就可以了
+				for (let i = 0; i < arr.length - 1 - j; i++) {
+					if (arr[i] < arr[i + 1]) {
+						let num = arr[i]
+						arr[i] = arr[i + 1]
+						arr[i + 1] = num
+					}
+				}
+			}
+
+			// 排序算法
+			// 核心思想:用外层循环的这个数和内层循环的数进行比较,如果外层循环的这个数小于内层循环的这个数,那个就交换索引值,如果索引值改变了的话,再交换这个数值
+			let arrTwo = [1, 2, 5, 4, 6, 7, 8, 9, 64, 4]
+			for (let k = 0; k < arrTwo.length - 1; k++) {
+				let index = k
+				for (var f = k + 1; f < arrTwo.length; f++) {
+					if (arrTwo[index] < arrTwo[f]) {
+						index = f
+					}
+				}
+				if (index !== k) {
+					let tem = arrTwo[k]
+					arrTwo[k] = arrTwo[index]
+					arrTwo[index]=tem
+				}
+			}
+
+			console.log(arr)
+			console.log(arrTwo)
+			
+			arrThere = ['beijing','shanghai','tianjin']
+			arrThere.push('shenzhen','guangdong')
+			arrThere.push(arr)
+			for (let s of arrThere) {
+				if (Array.isArray(s)) {
+					for (let w of s) {
+						console.log(w)
+					}
+				}
+			}
+			console.log(arrThere)
+			let obj = {
+				name:'Kemm',
+				age:18,
+				sex:'F'
+			}
+			delete(obj.name)
+			console.log(obj)
+			delete(obj['sex'])
+			console.log(obj)
+		</script>
+	</body>
+</html>

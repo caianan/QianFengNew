@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            /*
+            	判断50-90所有的质数
+
+            */
+            // 判断这个数是不是质数
+            // let num = 59
+            // let res = 'zhishu'
+            // // 判断这个数是不是质数的标准:只能被1和它本身整除,所以要从2到num-1开始循环,看这之间有没有数可以整除num这个数
+            // for (let i = 2; i < num - 1; i++) {
+            //     if (num % i === 0) {
+            //         res = 'heshu'
+            //         break
+            //     }
+            // }
+            // console.log(`${num}是${res}`)
+
+            // 判断50-90所有的质数 就是将num换成50-90之间的数字,这样讲50-90的数字进行循环就可以了
+            for (let i = 50; i <= 90; i++) {
+                let res = 'zhishu'
+                for (let j = 2; j <= i - 1; j++) {
+                    if (i % j === 0) {
+                        res = 'heshu'
+                        break
+                    }
+                }
+                if (res === 'zhishu') {
+                    console.log(`${i}是质数`)
+                }
+            }
+        </script>
+    </body>
+</html>

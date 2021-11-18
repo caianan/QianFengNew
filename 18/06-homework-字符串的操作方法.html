@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // str.indexOf('查询内容') str.lastIndeOf('查询内容')
+            // 如果找到查询内容,返回这个字符的索引下标;如果没有找到查询内容,返回-1
+            /* let str = 'abcdefaldkfjdsdf'
+            let res1 = str.indexOf('d')
+            console.log(res1) //3
+            let res2 = str.lastIndexOf('d')
+            console.log(res2) // 14
+            let res3 = str.lastIndexOf('x')
+            let res4 = str.indexOf('x')
+            console.log(res3, res4) //-1 -1 */
+
+            // 截取 str.substr()  str.substring()
+            /* let str = 'abcdefaldkfjdsdf'
+            // str.substr(参数1,参数2)
+            // 参数1可是是整数也可以是负数
+            // 参数1 是正数的情况,从这个所以开始截取一直到结束
+            let res1 = str.substr(1)
+            console.log(res1) //bcdefaldkfjdsdf
+            // 参数1 时正数且大于字符串的长度,得到的是一个空字符串
+            let res2 = str.substr(str.length)
+            console.log(res2)
+
+            // 参数1是负数,从这个字符串负数的位置,一直向右截取完
+            let res3 = str.substr(-2)
+            console.log(res3) //df
+            // 参数1是负数,且这个数的绝对值大于字符串长度,截取的是整个字符串长度
+            let res4 = str.substr(-str.length)
+            console.log(res4) //abcdefaldkfjdsdf
+
+            // 参数2,截取的长度,这个数不能为负数,如果为负数没有意义
+            let res5 = str.substr(1, 2)
+            console.log(res5) //bc
+            let res6 = str.substr(-3, 2)
+            console.log(res6) //sd
+            let res7 = str.substr(-3, -2)
+            console.log(res7) //空字符串,无意义 */
+
+            // str.substring()
+            // let str = 'abcdefaldkfjdsdf'
+            // // 参数一,截取的起始位置,不能为负数,如果为负数无意义,如果单独写和substr()第一个参数为正数效果一样
+            // let res1 = str.substring(6)
+            // console.log(res1)
+            // // 参数2,截取结束的位置,不好含这个结束索引的字符
+            // // 为正数
+            // let res2 = str.substring(2, 6)
+            // console.log(res2) //cdef
+            // // 为正数,大于字符串从长度
+            // let res3 = str.substring(2, str.length)
+            // console.log(res3) //cdefaldkfjdsdf
+            // // 为负数,都是从起始的位置向头部截取,但是不包括起始的位置
+            // let res4 = str.substring(5, -99)
+            // console.log(res4)
+
+            // str.split
+            let str = '今天是个好天气,天气好好哦'
+            console.log(str.split('天气')) //['今天是个好', ',', '好好哦']
+
+            // str.repalce()
+            let res = str.replace('气', '器')
+            console.log(res)
+        </script>
+    </body>
+</html>

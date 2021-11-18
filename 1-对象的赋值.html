@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let obj = {}
+			// 给obj中添加值得值
+			obj.name = "Jack"
+			obj.age = 16
+			hobby = ['Play Games', 'Reading', 'Singing']
+			obj.hobby = hobby
+			obj['country'] = 'China'
+			obj['sex'] = 'F'
+			console.log(obj)
+			// 调用
+			let studentSex = 'sex'
+			console.log(obj[studentSex]) //F
+			let studentCountry = 'country'
+			console.log(obj[studentCountry]) //China
+			console.log(obj['name']) //Jack
+			console.log(obj.age)
+			// 其他类型转化为布尔类型的自动转化
+			// 0 '' null undefined NaN
+
+			if (function() {
+					console.log(1)
+				}) {
+				console.log('true')
+			} else {
+				console.log('false')
+			}
+			
+			if ('nbsp;') {
+				console.log('true')
+			} else{
+				console.log('false')
+			}
+			let arr = null
+			if (arr) {
+				console.log('true')
+			} else{
+				console.log('false')
+			}
+			
+			// 其他类型转化为字符串
+			function fun(){console.log('func')}
+			console.log(''+function fun(){console.log('func')}) //function fun(){console.log('func')}
+			console.log(''+obj)//[object Object]
+			let num = 123
+			console.log(''+num)
+		</script>
+	</body>
+</html>

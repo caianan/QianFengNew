@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// one:随机生成1000 - 9999 的数值,判断数值是否是闺年
+			let year = parseInt(Math.random() * (9999 + 1 - 1000) + 1000)
+			year = 2020
+			if ((year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0)) {
+				console.log(`${year}年是闰年`)
+			} else {
+				console.log(`${year}年是平年`)
+			}
+			// 三元运算符
+			console.log(`${year}是${(year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0)?'闰年':'平年'}`)
+		</script>
+	</body>
+</html>

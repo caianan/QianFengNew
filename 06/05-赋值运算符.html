@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				赋值运算符
+					= 赋值运算符
+						将符号右侧表达式的执行结果,赋值给左侧变量存储
+						如果对一个变量进行重复赋值,执行覆盖效果
+					+= 加等赋值运算符
+						在左侧变量存储的原始数据的基础上,累加右侧表达式的执行结果,再将右侧最终的结果,赋值给左侧存储
+					-= 
+						在左侧变量存储的原始数据的基础上,累减右侧表达式的执行结果,再将右侧最终的结果,赋值给左侧存储
+					*= 乘等赋值运算符
+						在左侧变量存储的原始数据的基础上,累乘右侧表达式的执行结果,再将右侧最终的结果,赋值给左侧存储
+					/= 除等赋值运算符
+						在左侧变量存储的原始数据的基础上,累除右侧表达式的执行结果,再将右侧最终的结果,赋值给左侧存储
+					%= 模等
+						左侧变量作为被除数,右侧表达式的结果作为除数,两个数值执行求余数运算,将最终的结果赋值给左侧变量存储
+			*/ 
+		    // 重复赋值
+			var intOne = 100
+			var intOne = 200
+			console.log(intOne) //200
+			// 累加赋值
+			var intTwo = 200
+			// intTwo存储的原始数值是200,使用原始数值加上右侧表达式的执行结果,最终的执行结果是400,再赋值给intTwo.展开写就是intTwo = intTwo+200
+			intTwo += 200
+			console.log(intTwo) //400
+			let intThree = 500
+			intThree -= 100
+			intThree -= 100
+			console.log(intThree) //300
+			// 减去右侧表达式的执行结果,所以应该减去400+100的结果
+			intThree-=400+100 
+			console.log(intThree) //-200
+			//乘等赋值运算符
+			let intFour = 100
+			intFour *= 2+3
+			console.log(intFour) //500
+			
+			//除等赋值运算符
+			let intFive = 100
+			intFive /= 2+3
+			console.log(intFive) //20
+			
+			// %= 模等
+			let intSix = 100
+			intSix %= 1+2
+			console.log(intSix) //1
+			/*
+				= 赋值运算符 将右侧结果赋值给左侧变量存储,重复赋值是覆盖效果
+			*/
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+            作业1:
+                有100块钱存在银行每年给我3元利息
+                问:多少年以后利息超过100块
+                友情提示:可以使用for循环/ while循环
+        */
+            // 定义一个计数器
+            let count = 0
+            // 定义原始的金额
+            let money = 100
+            for (let i = 0; true; i += 3) {
+                count += 1
+                if (i > money) {
+                    break
+                }
+            }
+            console.log(`${count - 1}次之后利息超过100块`)
+
+            // 使用while循环
+            let countTwo = 0
+            let moneyTwo = 100
+            let interest = 0
+            while (true) {
+                countTwo += 1
+                interest += 3
+                if (interest > moneyTwo) {
+                    break
+                }
+            }
+            console.log(`${countTwo}次之后利息超过100块`)
+        </script>
+    </body>
+</html>

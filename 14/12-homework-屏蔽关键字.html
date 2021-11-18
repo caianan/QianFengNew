@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+                1,屏蔽字符串中的关键词
+                北京今天太tmd的冷了--- 北京今天太***的冷了
+                北京今天太tmd的冷了北京今天太tmd的冷了北京今天太t
+                md的冷了
+
+            */
+            let str = '北京今天太tmd的冷了北京今天太tmd的冷了北京今天太md的冷了'
+            // let arr = str.split('tmd')
+            // let clear = arr.join('***')
+            // console.log(clear)
+            console.log(str.split('tmd').join('***'))
+        </script>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+                选择排序的核心思想
+                    每一次循环,将一个最小值 交换存储到 数组的起始位置
+                    通过多次循环,完成数组的整个排序
+
+                    每次循环
+                        默认循环的起始单元是存储最小值的单元
+                        循环遍历 起始单元之后的所有单元
+                        使用变量,默认存储起始单元的索引下标
+                        如果之后的单元存储的数据,小于起始单元的数据
+                        变量就记录之后单元的索引下标
+                        每次都是变量存储的索引下标对应的单元的数据和之后循环单元存储的数据进行比较
+                        循环结束,变量中会存储本次参与循环最小值的索引下标
+
+                        判断,如果这个索引下标,不是起始单元的索引下标
+                        就要交换 起始单元 和 变量存储索引下标对应单元 存储的数据
+
+            */
+            let arr = [45, 1, 2, 3, 4, 78978, 46, 5, 6]
+
+            for (let j = 0; j < arr.length - 1; j++) {
+                const element = arr[j]
+                // 内部循环,核心思想:每一次循环,将一个最小值 交换存储到 数组的起始位置
+                // 先定义一个变量index,这个变量用来存储数组循环中的索引值
+                let index = j
+                // 循环arr这个数组
+                // let i = index + 1
+                // 比较是从循环的数组的索引值,紧挨着的下一个索引值开始的,所以第二层循环的索引值的其实值是index+1
+                for (let i = index + 1; i <= arr.length; i++) {
+                    // 如果arr[arr]大于后面循环的索引值,那么将这个索引值i赋值给index
+                    if (arr[index] > arr[i]) {
+                        index = i
+                    }
+                }
+                // 在第二层循环完之后,如果index和j不同,那就证明在arr[index]和后面的索引对应值在进行比较的时候,有arr[index] > arr[i]的情况出现
+                // 并且最后最后index对应的索引值,是在第二层循环比较中最小的一个数,这个时候将将arr[j]和arr[index]对换位置就好了
+                if (index !== j) {
+                    let num = arr[j]
+                    arr[j] = arr[index]
+                    arr[index] = num
+                }
+                // 交换之后,在arr[0]位置的数就是最小的数
+            }
+            console.log(arr)
+            /* 
+                冒泡排序和选择排序的比较
+                    冒泡排序:
+                        核心思想:两个相邻单元进行比较,如果前大后小,交换存储的数据.如果一直是前大后效,就会一直交换存储的数据
+                    选择排序:
+                        核心思想:存储本次循环最小值所在单元的索引下标
+                            内藏循环结束,只判断交换一次存储的数据
+                        选择排序,交换存储数据更少,执行效率更高
+            
+            */
+        </script>
+    </body>
+</html>

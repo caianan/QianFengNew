@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                选择排序
+                    核心思想: 每次循环,默认其实单元是存储最小值的位置,变量中存储其实单元位置的索引下标.从起始单元的下一个单元开始,循环至数组的最后一个单元.
+                    使用 变量存储的索引下标对应的数据和之后循环单元对应的数据,进行数据比较.如果循环单元存储的数值较小,变量中存储循环单元的索引下标
+                数组的操作方法
+                    arr.push() 数组的末位新增单元
+                    arr.unshift() 数组的首位新增单元
+                        一次可以新增一个或者多个单元,多个单元之间用都好间隔
+                        执行效果,在数字的末位/首位,新增单元
+                        执行结果返回值,新增单元之后,新数组的长度.也就是新数组的length属性
+                    arr.pop() 数组的末位删除单元
+                    arr.shift() 数组的末位删除单元
+                        一次只能删除一个单元,
+                        执行效果是在数组的末位/首位删除一个单元
+                        执行结果的返回值 ,删除单元存储的数据信息
+                对象的操作方法
+                    delete(对象.属性)
+                    delete(对象['属性'])
+            */
+            let arr = [999, 2, 3, 4, 5, 6]
+            let num = arr.shift()
+            console.log(arr) //[2, 3, 4, 5, 6]
+            console.log(num) //999
+        </script>
+    </body>
+</html>

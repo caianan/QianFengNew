@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+                数组的操作方法:
+                    数组的写入和删除操作
+                    在数组的其实位置和结束位置,做删除和写入的操作
+
+                    数组.push()
+                        在数组的末尾写入新的数据单元
+                        效果是新增一个单元
+                        执行结果返回值,在末位新增一个单元之后,得到的新数组的数组长度
+                        实际的执行效果就是arr[arr.length] = 'Xian'
+                        使用push方法,效率会更快,而且有新数组长度这个返回值
+                        可以一次新增多个数据单元,多个数据单元之间使用逗号间隔
+                    数组.unshift()
+                        数组的首位写入新的数据
+                        一次可以新增一个或者多个数据单元,多个数据单元之间使用逗号间隔
+                        函数方法执行效果是在数组的起始位置上新增单元
+                        执行结果返回值,在起始位置新增一个单元之后,得到的新数组的数组长度
+                    数组.pop()
+                        数组的末尾删除数组单元,一次只能删除一个数据单元
+                        执行效果是删除数组末尾的数据单元
+                        执行结果返回值是删除的数据单元存储的数据
+                    数组.shift()
+                        数组的首位删除数组单元,一次只能删除一个数据单元
+
+            */
+            let arr = ['Beijing', 'Shanghai', 'Chongqing', 'Tianjin', 'ChengDu']
+            let resOne = arr.push('Xian')
+            let resTwo = arr.push('Changshang', 'Nanning')
+            console.log(arr) //['Beijing', 'Shanghai', 'Chongqing', 'Tianjin', 'ChengDu', 'Xian']
+            console.log(`resOne is ${resOne}`) //resOne is 6
+            console.log(`resTwo is ${resTwo}`) //resOne is 8
+
+            // unshift
+            let resThree = arr.unshift('Hangzhou', 'Yinchuan')
+            console.log(arr) //['Hangzhou', 'Yinchuan', 'Beijing', 'Shanghai', 'Chongqing', 'Tianjin', 'ChengDu', 'Xian', 'Changshang', 'Nanning']
+            console.log(resThree) //10
+
+            let arrTwo = ['something', 'another', 1, 2, 3, 4, 8]
+            let resFour = arrTwo.pop()
+            console.log(resFour) // 8
+            console.log(arrTwo) // [1, 2, 3, 4]
+
+            let resFive = arrTwo.shift()
+            console.log(resFive) //something
+            console.log(arrTwo) //['another', 1, 2, 3, 4]
+        </script>
+    </body>
+</html>

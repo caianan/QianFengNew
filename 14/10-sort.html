@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+                arr.sort()
+                    数组的排序
+                    排序方式:默认以首尾数值大小进行排序
+                    按照数值从小打大进行排序
+                        arr.sort(function(a,b){
+                            return a-b
+                        })
+                    按照数值从大打小进行排序
+                        arr.sort(function(a,b){
+                            return b-a
+                        })
+                    如果是纯数字的字符串,就按照数值来执行
+                    如果不是纯数字字符串,比较的就是 首字符的 ASCII码的数值
+                    中文是按照Unicode编码排序
+                    一般实际项目中,只排序纯数字的字符串,不会排有字符混合的数组
+            */
+            var arr = [3245, 768, 3456, 4567, 8, 556463, 987, 46543698, 345, 342, 342, 4363, 567]
+            //默认以首尾数值大小进行排序
+            arr.sort()
+            console.log(arr) //[3245, 342, 342, 345, 3456, 4363, 4567, 46543698, 556463, 567, 768, 8, 987]
+            // 按照数值从小打大进行排序
+            arr.sort(function (a, b) {
+                return a - b
+            })
+            console.log(arr) //[8, 342, 342, 345, 567, 768, 987, 3245, 3456, 4363, 4567, 556463, 46543698]
+            // 按照数值从大打小进行排序
+            arr.sort(function (a, b) {
+                return b - a
+            })
+            console.log(arr) //[46543698, 556463, 4567, 4363, 3456, 3245, 987, 768, 567, 345, 342, 342, 8]
+            var arrTwo = [1, 2, 3, 4, 'a', 'b', 'c', '上海', '北京']
+            arrTwo.sort(function (a, b) {
+                return a - b
+            })
+            console.log(arrTwo) //[1, 2, 3, 4, '5', '6', '7']
+        </script>
+    </body>
+</html>

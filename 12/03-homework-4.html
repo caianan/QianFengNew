@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      /*
+      	通过输入框 输入 年 月 日
+      		判断输入日期是这一年的第几天
+      */
+      // 输入框输入的数据结果都是字符串
+      let year = window.prompt('请输入年') * 1
+      let month = window.prompt('请输入月') * 1
+      let day = window.prompt('请输入日') * 1
+      // 定义一个数组,存储每个月的天数
+      // 因为就算取第12个月，也不用取数组中的第十二个月的天数，所以在定义数组的时候，就不用定义第十二个月的天数
+      let monthArr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+      // 定义一个变量,存储最后的日期总数
+      let allDays = 0
+      // 先判断输入的年份是不是闰年
+      // 闰年的判断方法:可以被400整除,或者可以被4整除但是不能被100整除
+      // 如果是闰年的话，将monthArr下标为1的值赋值为29，如果是平年的话不变
+      if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
+        monthArr[1] = 29
+      } else {
+        monthArr[1] = 28
+      }
+      //   if (month === 1) {
+      //     allDays = day
+      //     console.log(`这是今年的第${allDays}天`)
+      //   } else {
+      //     for (let i = 2; i <= month; i++) {
+      //       allDays += monthArr[i - 2]
+      //     }
+      //     allDays += day
+      //     console.log(`这是今年的第${allDays}天`)
+      //   }
+      // 就算是第一个月也不需要额外的判断，因为如果真的输入1月，那么1-2小于0，就不会进入到这个循环中
+      for (let index = 0; index <= month - 2; index++) {
+        allDays += monthArr[i]
+      }
+      allDays += day
+      console.log(`${year}年${month}月${day}日是这一年的第${allDays}天`)
+    </script>
+  </body>
+</html>

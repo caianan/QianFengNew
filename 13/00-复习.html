@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                循环总结：
+                    for 循环
+                        通过循环生成数组的索引下标，通过索引下标来获取数组单元的数据，达到循环数组中每一个单元的效果
+                        索引下标的范围是 0--arr.length-1
+                        for循环是唯一一个可以控制循环过程的循环方式
+                        for(var i = 0; i < arr.length-1; i++) {
+                            执行程序 数组[i]来获取数据
+                        }
+                        可以循环遍历数组，不能循环遍历对象
+                    for in 循环
+                        自定义一个变量，JavaScript程序会自动像变量中存储数组单元的索引下标
+                        整个的循环过程，我们无法控制，是JavaScript自动完成的循环
+                        for(var 变量 in 数组){
+                            执行程序 数组[变量]来获取数据
+                        }
+                        可以循环遍历数组，可以循环遍历对象
+                        循环遍历对象的时候，定义的变量中存储的是对象的键名
+                    for of 循环
+                        自定义一个变量，JavaScript程序会自动像变量中存储数组单元的数据数值
+                        for(var 变量 of 数组){
+                            执行程序 变量存储的就是数组单元的数据
+                        }
+                        可以循环遍历数组，不能循环遍历对象
+                    forEach 循环
+                        可以定义三个变量
+                            变量1，存储数组的数据数值
+                            变量2，存储数组单元的索引下标
+                            变量3，存储原始数组
+                            arrs.forEach(function(value,key,arrs) {
+                                执行程序
+                            })
+            
+            */
+        </script>
+    </body>
+</html>

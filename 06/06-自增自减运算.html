@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				自增自建运算符
+					++ --
+					没执行一次变量,变量一定会在存储的袁术数值基础上,累加+1 或者累减1
+				自增自减有两种语法形式
+					变量++ 变量--
+						后缀执行结束,变量存储的数值一定会累加+1或者累减1
+						后缀,使用变量的原始数值,参与程序的计算
+						在下一个位置,体现自增自减的执行结果
+					++变量 --变量
+						后缀执行结束,变量存储的数值一定会累加+1或者累减1
+						前缀,使用自增或者自减之后的新数值参与程序的执行
+			*/
+			let a = 0
+			a++
+			a++
+			a++
+			a++
+			// 每执行一次++,变量存储的数值就会累加1
+			console.log(a) //4
+			let b = 0
+			b--
+			b--
+			b--
+			b--
+			b--
+			// 每执行一次-- 变量存储的数值就会累减1,原始数值是0,累减5次结果就是-5
+			console.log(b) //-5
+
+			// 自增自减的运算效果
+			let c = 0
+			// 后缀语法形式的自增
+			// 后缀语法,使用变量c存储的原始数值0参与程序的运算,也就是使用0参与赋值运算,将0赋值给d,赋值操作结束之后,数值c存储的0再执行累加操作
+			let d = c++;
+			console.log(d) //0
+			console.log(c) //1
+			// 前缀语法形式的自增
+			// 前缀语法,使用自增之后的数值,参与程序的执行
+			// 使用a存储原始数值0,自增之后数值1参与程序的执行.也就是将数值1赋值给变量c
+			let e = ++c
+			console.log(e) //2
+			// 练习
+			let intOne = 0
+			let intTwo = intOne++ + 1
+			console.log(intTwo) //1
+			console.log(intOne) //1
+			
+			console.log('==============')
+			let eins = 0
+			let zwei = ++eins +1 
+			console.log(eins) //1
+			console.log(zwei) //2
+			
+			console.log('==============')
+			// three++ 在参与运算的时候是0,three又有一个自增运算,在参与运算的时候结果会变成1,所以0+1最后的结果是1
+			let three = 0;
+			let four = three++ + three
+			console.log(three) //1
+			console.log(four) //1
+			
+			console.log('==============')
+			// 前缀使用自增之后的数值参与运算,所以six=1+1
+			let five = 0;
+			let six = ++five + five
+			console.log(five) //1
+			console.log(six) //2
+			
+			
+			console.log('==============')
+			let seven = 0
+			let eight = seven++ + ++seven
+			console.log(seven) //2
+			console.log(eight) //2
+		</script>
+	</body>
+</html>

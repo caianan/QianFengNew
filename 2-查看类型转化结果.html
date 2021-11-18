@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			console.log(1 + true) //2
+			// 这时自动类型的转化,布尔类型会转化为数字类型,true---1 
+			/*
+				自动类型转化的规则
+					true --- 1
+					false --- 0
+					null --- 0
+					undefined --- NaN
+					[] ---- 0
+					[0] ---- 0
+					[1] ---- 1
+					{} --- NaN
+					function(){} --- NaN
+					'123' --- 132
+					'1.23' --- 1.23
+					'2e3' --- 2000
+					'sdf' --- NaN			
+			*/
+			console.log('2e3' * 1) // 2000
+			console.log(Number(1 + true)) // 2
+			// Number() 是其他数据类型强制转化为数值型,规则和自动转化一致
+			console.log(Number(1 + 'true')) //NaN
+			// 1+'true'会自动转化为字符串类型"1true",这个时候再使用Number强制转化,就是NaN
+
+			console.log('===============')
+			console.log(parseInt(1 + true)) //2
+			console.log(parseInt(NaN)) //NaN
+			// 1+true true会自动转化为1 所以1+1结果就是2
+			/*
+				parseInt强制转化的原则
+					parseInt(1.235) ---- 1
+					// 从左起的第一个字符不是数值类型,所以结果都是NaN
+					parseInt(null)
+					parseInt(undefined)
+					// 对象和函数都是NaN
+					parseInt({})
+					parseInt(function(){})
+					// 数组看第一个数据单元从左向右第一个字符是否是数字
+					console.log(parseInt([])) //NaN
+					console.log(parseInt([1])) //1
+					console.log(parseInt(['111'])) //111
+					console.log(parseInt(['abc'])) //NaN
+			*/
+			console.log('===============')
+			console.log(parseInt([])) //NaN
+			console.log(parseInt([1])) //1
+			console.log(parseInt(['111'])) //111
+			console.log(parseInt(['abc'])) //NaN
+
+			console.log(parseInt(['12adc'])) //12
+			console.log(parseInt('asdf123')) //NaN
+			console.log(parseInt('2e3')) //2
+			console.log('===============')
+			console.log(parseInt(1 + 'true')) //1
+			console.log('===============')
+			console.log(parseInt(100.123)) //100
+			console.log(parseFloat(100.123)) //100.123
+
+			console.log('===============')
+			console.log(parseInt(2e3)) //2000
+			console.log(parseInt('2e3')) //2
+			console.log(parseFloat(2e3)) //2000
+			console.log(parseFloat('2e3')) //2000
+			
+			console.log('===============')
+			console.log(Number(1+2+3)) //6
+			console.log(Number(1+'2'+3)) //123
+			console.log(Number('1+2+3')) //NaN
+			
+			console.log('===============')
+			console.log(parseInt(1+2+3)) //6
+			console.log(parseInt(1+'2'+3)) //123
+			console.log(parseInt('1+2+3')) //1
+			
+			console.log('===============')
+			console.log(parseInt('')) //NaN
+			console.log(parseInt('df1.23456')) //NaN
+			console.log(parseFloat('1.2645efdf')) //1.2645
+			
+		</script>
+	</body>
+</html>

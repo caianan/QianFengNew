@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let arrs = ['Beijing', 'Shanghai', 'TianJing', 'HeiLongJiang', 'XinJiang']
+            let obj = {
+                name: 'Jackson',
+                sex: 'M',
+                age: 36,
+                height: 185,
+            }
+            // for in循环,可以循环对象
+            for (const key in obj) {
+                console.log(key, obj[key])
+            }
+            for (const key in arrs) {
+                console.log(key, arrs[key])
+                // 这个key是字符串
+            }
+
+            console.log('==================')
+            // for of循环，可以循环数组，不能循环对象
+            for (const value of arrs) {
+                console.log(value)
+            }
+            console.log('==================')
+
+            // forEach,可以循环数组，不能循环对象
+            arrs.forEach(function (value, key, arrs) {
+                console.log(value, key, arrs)
+            })
+        </script>
+    </body>
+</html>

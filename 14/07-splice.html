@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                arr.splice(参数1,参数2,参数3);   
+                    数组单元的删除操作
+
+                    参数1:数组删除单元起始位置的索引下标,也就是从哪儿开始删
+                    参数2:数组删除单元的个数,也就是删除几个单元
+                    参数3:删除之后替换的内容
+                        删除的所有单元,被视为一个整体,使用参数3来替换
+                        如果只有一个参数,从起始索引下标开始,删除至数组的最后一个单元
+
+                    数组删除操作,会直接改变原始数组中 存储的数据内容
+                    删除操作的结果是删除的数组单元内容,
+            */
+            let arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+            console.log(arr.splice(0, 3)) //['a', 'b', 'c']
+            console.log(arr) //['d', 'e', 'f', 'g', 'h', 'i', 'j']
+            // 即使删除了3个单元,也会被是为是一个删除的整体
+            // 使用参数3做一次替换
+            console.log(arr.splice(1, 3, '我是替换的内容')) //['e', 'f', 'g']
+            console.log(arr) // ['d', '我是替换的内容', 'h', 'i', 'j']
+        </script>
+    </body>
+</html>

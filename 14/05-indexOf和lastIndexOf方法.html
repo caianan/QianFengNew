@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                arr.indexOf()
+                    arr.indexOf('查询内容'),数组查询方法
+                    在数组中查询是否有设定的内容:
+                        如果有返回存储这个内容单元的下标
+                        如果没有返回值是-1
+
+                        如果多个单元都存储相同的符合查询的数据
+                        执行结果是 返回 第一个符合条件的单元的索引下标
+                arr.lastIndexOf
+                    在数组中 查询 最后一个符合条件的内容
+                        如果有返回存储这个内容单元的下标
+                        如果没有返回值是-1
+
+            */
+            let arr = [1, 2, 3, 4, 5, 'Beijing', 'ShangHai', 'GuangZhou', 'ShenZhen', 'TianJin', 4, 6]
+            // 使用变量 存储indexOf()的执行结果返回值
+            // 在数组arr中查询内容'ShangHai'
+            let res = arr.indexOf('ShangHai')
+            // 在数组中查询是否有设定的内容'ShangHai'的索引下标
+            // 如果有返回存储这个内容单元的下标;如果没有返回值是-1
+            console.log(res) //6
+            console.log(arr.indexOf('xian')) //-1
+            //如果多个单元都存储相同的符合查询的数据,执行结果是 返回 第一个符合条件的单元的索引下标
+            console.log(arr.indexOf(4))
+
+            console.log('======================')
+            console.log(arr.lastIndexOf(4))
+            console.log(arr.lastIndexOf('aaa')) //-1
+        </script>
+    </body>
+</html>

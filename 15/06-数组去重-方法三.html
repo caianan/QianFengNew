@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+            思路:
+                利用对象的特点
+                    对象中,不会有相同的键名 
+                    相同键名 执行的操作 不是 新增对象单元 操作
+                    是 修改对象单元 存储数据操作
+        */
+            let obj = { name: 'jack', name: 'Tom' }
+            console.log(obj) //{name: 'Tom'} 打印的结果是对象中只有一个数据,'Tom'把'jack'给覆盖了
+            // 所以可以根据这个特性,让数组中的元素当作对象中的键名来去重
+            let arr = [1, 2, 3, 6, 5, 4, 1, 2, 3, 6, 5, 1, 2, 3, 1, 2, 3, 4]
+            // 新建一个对象
+            let objTwo = {}
+            for (let index = 0; index < arr.length; index++) {
+                const element = arr[index]
+                // 将循环中的数组中的数据当成key,存入到对象中
+                // 因为对象的键名是一个变量的话,需要使用[],不能使用.语法,不然无法解析
+                objTwo[element] = 'value'
+            }
+            console.log(objTwo) //{1: 'value', 2: 'value', 3: 'value', 4: 'value', 5: 'value', 6: 'value'}
+            // 然后再循环这个对象,将这个对象的key存入到数组中
+            // 创建一个新数组
+            let arrTwo = []
+            // 循环对象,对象只能用for in循环
+            for (const key in objTwo) {
+                arrTwo.push(key - 0)
+            }
+            console.log(arrTwo)
+            /* 
+                总结:
+                    1.将原数组进行循环,然后将每个数组当成键名,添加到对象中,因为键名是不能重复的,所以最后得到的对象中没有重复的键名
+                    2.再创建一个新的数组,利用对象的循环,将对象中的键名,添加到新数组中
+            
+            */
+        </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				字符串类型是一个很神奇的数据类型
+				也被成为包装类型
+				在面对数组操作语法的时候,字符串会把自己包装成一个类似数组的类型
+				支持[]语法操作,以及length属性
+				可以通过[]语法获取字符串中指定索引下标对应的一个字符
+				也可以获取字符串 length属性值,也就是字符串长度,也就是字符个数
+				但是,不支持[]语法对字符串内容的修改,和字符串的新增操作
+			*/
+			let str = 'abcdefghijklmn'
+			// 字符串会把自己包装成一个类似数组的类型,支持length属性
+			console.log(str.length)
+			// 可以通过[]语法获取字符串中指定索引下标对应的一个字符
+			console.log(str[3]) //d
+			// 输出整个字符串
+			console.log(str) //abcdefghijklmn
+			// 但是,不能通过[]语法修改和新增这个字符串
+			str[2] = 'Jack'
+			console.log(str) //abcdefghijklmn
+			let arr = [1, 2, 3, 4, 5, 6]
+			arr.splice(1, 1, 'jack')
+			console.log(arr)
+		</script>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 最小公倍数
+			/*
+				两个数一大一小,如果大数%小数===0,也就是大数可以整除小数
+				大数就是两个数值的最小公倍数
+				
+				分析
+					两个数,一个大数一个小数
+					第一种情况:如果大数/小数 === 0,那么这个大数就是这个小数的最小公倍数
+					第二种情况:如果大数/小数不等于0,那么从这个大数+1开始,直到小于等于大数*小数为止
+			*/
+		    let max = 10
+			let min = 8
+			if (max%min === 0) {
+				console.log(`${max}就是${min}和${max}的最小公倍数`)
+			} else {
+				for (let i = max+1; i <= 100; i++) {
+					if (i%min == 0 && i%max == 0) {
+						console.log(`${i}就是${max}和${min}的最小公倍数`)
+						break
+					}
+				}
+			}
+			
+			// 最大公约数
+			/*
+				两种情况
+				第一种情况:如果大数%小数的值===0那么大数就是小数的最大公约是
+				第二种情况:如果大数%小数的值不等于0,那么从大数 - 1 开始 一直到0,如果有有一个数,大数%这个数===0,并且小数%这个数===0,那么这个数就是大数和小数的最大公约数
+			*/
+		    let maxTwo = 8
+			let minTwo = 6
+			if (maxTwo%minTwo===0) {
+				console.log(`${minTwo}就是${maxTwo}和${minTwo}的最大公约数`)
+			} else{
+				for (let j = maxTwo-1; j>0; j--) {
+					if (maxTwo%j===0 && minTwo%j===0) {
+						console.log(`${j}就是${maxTwo}和${minTwo}的最大公约数`)
+						break
+					}
+				}
+			}
+
+			
+		</script>
+	</body>
+</html>

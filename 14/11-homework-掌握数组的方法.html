@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // arr.indexOf() arr.lastIndexOf() 根据括号中匹配的数字找到对应的索引下标
+            let arr = [1, 'Beijing', 2, 3, 5, 'Beijing', 'Shanghai']
+            console.log(arr.indexOf(5)) //3
+            console.log(arr.lastIndexOf(5)) //3
+            // 如果搜索重复的数组数据,indexOf()的结果是第一个匹配数据的索引下标;lastIndexOf()是最后一个匹配数据的索引下标
+            console.log('==============================')
+            console.log(arr.indexOf('Beijing')) //1
+            console.log(arr.lastIndexOf('Beijing')) //5
+            console.log('==============================')
+
+            // arr.join() 将数组结合成为字符串,原数组不变
+            // str.split() 将字符串分割为数组,原字符串不变
+            let arrOne = ['hello', 'world', 'I', 'love', 'you']
+            console.log(arrOne.join()) //hello,world,I,love,you 默认不加间隔符
+            console.log(arrOne.join('')) //helloworldIloveyou
+            console.log(arrOne.join(' ')) //hello world I love you
+            console.log(arrOne) //['hello', 'world', 'I', 'love', 'you']
+            let str = 'hello world I love you'
+            console.log(str.split()) //['hello world I love you'] 默认部分个,直接将字符串放入数组
+            console.log(str.split('')) //['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', ' ', 'I', ' ', 'l', 'o', 'v', 'e', ' ', 'y', 'o', 'u'] 以空字符串进行分割的话,就是按照字符串的每个字符进行分割
+            console.log(str.split(' ')) //['hello', 'world', 'I', 'love', 'you']
+            console.log(str)
+
+            console.log('==============================')
+            // str.splice() 删除数组,元素组是删除元素后剩下的元素
+            let arrTwo = [1, 2, 3, 4, 56, 7, 89, 6, 463]
+            // 连个参数,参数一:起始位置,参数二:删除的元素个数,最后一个删除的个数
+            // eg:arrTwo.splice(0, 4),删除的起始位置是0,删除4个元素,删除的最后一个元素下标就是3,并且包含这个下标为3的元素
+            console.log(arrTwo.splice(0, 4)) //删除操作返回的结果是一个由删除的元素组成的新数组
+            console.log(arrTwo.splice(1)) // 只写一个参数的话,这个参数就是删除的起始位置,表示从这个起始位置开始,将后面所有的参数都删除
+            console.log(arrTwo)
+
+            console.log('==============================')
+            // str.slice() 截取数组中的数据,原数组不会发生改变
+            // 两个参数 :第一个参数,截取的起始位置; 第二个参数,截取的结束位置的索引下标,但是不包含这个下标,呈现左闭右开的形式
+            let arrThree = [1, 2, 3, 4, 56, 7, 89, 6, 463]
+            console.log(arrThree.slice(2, 5)) //返回的结果是一个由截取的元素组成的新数组
+            console.log(arrThree.slice(2)) // 如果只写一个参数,这个参数就是截取的起始位置,就是从这个数组的截取的起始位置开始,一直到结束
+            console.log(arrThree) //原数组不会发生改变
+
+            console.log('==============================')
+            let arrFour = [1, 2, 3]
+            let arrFive = [4, 5, 6]
+            let arrSix = [7, 8, 9]
+            // arr.reverse() 数组反转,原数组发生改变
+            // arr.concat() 多个数组组成一个新数组,原数组不会发生改变
+            console.log(arrFive.reverse())
+            console.log(arrFive)
+            console.log(arrFour.concat(arrFive, arrSix))
+            console.log(arrFour)
+            console.log(arrFive)
+            console.log(arrSix)
+
+            console.log('==============================')
+            let arrSeventh = [1, 3, 6, 5, 7, 9, 555, 621, 3, 3, '456', '444']
+            // arr.sort() 数组排序,原数组发生改变
+            // 从小到大排列
+            arrSeventh.sort(function (a, b) {
+                return a - b
+            })
+            // 从小到大的排列
+            arrSeventh.sort(function (a, b) {
+                return b - a
+            })
+            console.log(arrSeventh)
+        </script>
+    </body>
+</html>

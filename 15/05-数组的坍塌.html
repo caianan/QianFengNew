@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+            数组的坍塌
+                所谓的数组的坍塌,指的是在数组删除单元操作时
+                被删除单元右侧单元会左移造成数组长度减少的情况
+                这样的效果 称为 数组坍塌
+
+                数组坍塌的影响
+                    删除单元执行之后,立即发生数组的坍塌
+                    之后的单元前移,占据删除单元的位置,容易造成 对 坍塌而来的单元遗漏判断验证
+                解决方案
+                    在执行数组单元删除的通知,执行循环变量i--
+                    也就是先i--,再i++,这样对发生数组单元删除操作的索引位置再次循环判断执行程序,防止坍塌的单元没有再次执行判断验证.
+                总结:
+                    哪儿删除,哪儿就一定坍塌
+                    如果有重复的数据,就一定要执行,循环变量-- 
+        */
+        </script>
+    </body>
+</html>

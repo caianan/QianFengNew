@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				break 一般用于记录循环次数demo
+			*/
+			// 定义一个三位随机数,当随机数等于666的时候一共循环了多少次
+			// 获取三位随机数
+			let num = parseInt(Math.random() * (999 + 1 - 100) + 100)
+			
+			// 第一种方法
+			// 定义这个数的初始值为0
+			let numOne = 0
+			// 定义一个计数器
+			let timeOne = 0
+			// 使用while循环,当numOne不等于666的时候循环就会一直执行,等于666的时候循环就会断开
+			while (numOne!==666){
+				numOne = parseInt(Math.random() * (999 + 1 - 100) + 100)
+				timeOne++
+			}
+			console.log(timeOne)
+			console.log('=================')
+			
+			
+			// 第二种方法,使用while的时候同时使用break
+			// 定义这个数的初始值为0
+			let numTwo = 0
+			// 定义一个计数器
+			let timeTwo = 0
+			while (true){
+				timeTwo++
+				numTwo = parseInt(Math.random() * (999 + 1 - 100) + 100)
+				if (numTwo === 666) {
+					break
+				}
+			}
+			console.log(timeTwo)
+			
+			
+			console.log('=================')
+			// 第三种方法,使用for循环的同时使用break
+			// 定义这个数的初始值为0
+			let numThree = 0
+			// 使用第三种方法的时候不用再定义计数器了,因为i++的时候就已经相当于计数器来使用了
+			// 注意,如果j设置为0的话,那么最终到666的次数会少一次
+			// 因为for循环是先执行循环体,然后再执行步长的,所以这样的话,当numThree === 666后面就不会再执行了,这样就会少执行一次,所以这个时候就要将j初始化为1
+			for (var j = 1; true; j++) {
+				numThree = parseInt(Math.random() * (999 + 1 - 100) + 100)
+				if (numThree === 666) {
+					break
+				}
+			}
+			console.log(j)
+			
+			/*
+				while循环中 循环体程序和步长的顺序是可以设定的,
+					也就是可以先执行步长,再执行循环体
+				for循环中,必须先执行循环体程序,最后执行步长
+					执行顺序 是 不能改变的
+			
+			*/
+		</script>
+	</body>
+</html>

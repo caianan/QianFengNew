@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				作业3:
+					如果三位数每一个位上的数值立方和等于这个数值本身
+					称为水仙花数
+					例如153 1的立方是1 5的立方是125 3的 立方是27和就是153 I
+					153就是水仙花数
+					求所有的三位的水仙花数
+			
+			*/
+			for (let i = 100; i <= 999; i++) {
+				let one = parseInt(i/100)
+				let two = parseInt((i%100)/10)
+				let three = parseInt(i%10)
+				// console.log(one,two,three)
+				if (one*one*one + two*two*two +three*three*three ===i ) {
+					console.log(`${i}是水仙花数`)
+				}
+			}
+		</script>
+	</body>
+</html>

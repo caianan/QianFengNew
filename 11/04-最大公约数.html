@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				最大公约数:
+					如果大数可以整除小数
+					小数 就是两个数值的最大公约数
+				如果大数不能整除小數
+					从小数-1至1循环
+					第一个可以同时整除大数和小数的数值就是最大公约数
+			*/
+			// 先分别定义最大值和最小值
+			let max = 8
+			let min = 6
+			// 先进行判断,如果大数可以整除小数,小数就是两个数值的最大公约数
+			if (max % min ===0 ) {
+				console.log(`${min}就是${max}和${min}的最大公约数`)
+			} else {
+				for (let i = max - 1; i >= 1; i--) {
+					if (max % i === 0 && min % i === 0) {
+						console.log(`${i}就是${max}和${min}的最大公约数`)
+						break
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

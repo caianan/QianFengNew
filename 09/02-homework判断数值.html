@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// two:随机生成1 - 100的整数,如果是偶数判断是否在20--40之间,如果是奇数判断是否在60--80之间
+			let num = parseInt(Math.random() * 100 + 1)
+			console.log(num)
+			// 判断是否是偶数
+			if (num % 2 === 0) {
+				// 判断是否在20--40之间
+				if (num >= 20 && num <= 40) {
+					console.log('是偶数并且在20--40之间')
+				} else {
+					console.log('是偶数但是不在20--40之间')
+				}
+			} else {
+				// 判断是否在60--80之间
+				if (num >= 60 && num <= 80) {
+					console.log('是奇数并且在60--80之间')
+				} else {
+					console.log('是奇数但是不在在60--80之间')
+				}
+			}
+		</script>
+	</body>
+</html>

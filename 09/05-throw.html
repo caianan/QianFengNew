@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				throw() 向控制台输出一个报错信息,同时终止程序继续执行
+					报错信息可以设定在throw的()小括号中
+				throw() 的报错信息只能输出到控制台
+				// 向控制台输出报错信息,throw之后的程序不会再执行
+				throw('您输入的性别有误,请您检查重新输入')
+				console.log('123456')
+			*/
+		    // 通过输入框输入的数据,数据类型都是字符串
+		    let sex = window.prompt('性别')
+		    let weight = window.prompt('体重') - 0
+		    let height = window.prompt('身高') - 0
+			console.log(sex,weight,height)
+			// 男性计算标准体重(身高CM - 80) * 0.7    女性计算标准体重( 身高CM - 70) * 0.6
+			// 标准体重*1.1或者标准体重*0.9 在这个范围内的体重都算是标准体重
+			
+			// 定义变量standardWeight,用来存储计算男女标准体重
+			let standardWeight = 0.0
+			if (sex === '男') {
+				standardWeight = (height - 80) * 0.7
+			} else if (sex === '女'){
+				standardWeight = (height - 70) * 0.6
+			} else {
+				// throw('对不起您输入有误')
+				console.log('对不起您输入有误')
+			}
+			if (weight>= standardWeight*0.9 && weight<= standardWeight*1.1) {
+				console.log(`恭喜您,您的体重是${weight}KG是标准体重`)
+			} else{
+				console.log(`很遗憾,您的体重是${weight}KG不是标准体重`)
+			}
+		</script>
+	</body>
+</html>

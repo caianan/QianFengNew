@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let arr = [1, 2, 3, 1, 2, 3, 6, 5, 4, 12, 12, 12, 3, 2, 5, 4, 1, 2, 3, 5, 4, 1, 3]
+            // 数组去重的方法一,使用indexOf的方法 原理 arr.indexOf('查询内容')=-1
+            // 创建一个新数组
+            /* let arrNew = []
+            for (let index = 0; index < arr.length; index++) {
+                const element = arr[index]
+                if (arrNew.indexOf(element) === -1) {
+                    arrNew.push(element)
+                }
+            }
+            console.log(arrNew) */
+
+            // 第二种方法,前后比较,这种涉及数组塌陷
+            // 先对数组进行排序
+            // arr.sort(function (a, b) {
+            //     return a - b
+            // })
+            // console.log(arr)
+            // 排序之后,数组前后的元素进行比较,如果相同,将后面的元素删除
+            /* for (let index = 0; index < arr.length; index++) {
+                if (arr[index] === arr[index + 1]) {
+                    arr.splice(index + 1, 1)
+                    index--
+                }
+            }
+            console.log(arr) */
+
+            // 第三种方法,利用对象的属性名不能重复
+            // 创建一个对象
+            /* let obj = {}
+            for (let i = 0; i < arr.length; i++) {
+                obj[arr[i]] = 'value'
+            } */
+            // 创建一个数组
+            /* let arrNew = []
+            for (const key in obj) {
+                arrNew.push(key)
+            }
+            console.log(arrNew) */
+        </script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				分支结构语句,是计算机程序中,一种代码执行的方式
+				分支结构语句,要么没有执行程序内容,要么只有一种执行程序
+				永远不可能有多种情况同时执行
+				语法形式1
+					if(表达式){执行程序}
+					表达式为true,执行定义的程序;表法是为false,没有执行内容
+				语法形式2
+					if (表达式) {
+						执行程序1
+					} else{
+						执行程序2
+					}
+					表达式是true,执行定义的程序1;表达式为false,执行定义的程序2
+				语法形式3
+					if (表达式1) {
+						
+					} else if (表达式2) {
+						
+					} else if (表达式3) {
+						
+					}
+					多个表达式逐一执行判断,哪个表达式为true,就执行哪个表达式对应的程序,之后的表达式不会再判断
+					多个条件最终要么只会执行一种情况的程序,要么没有执行的程序
+					
+			*/
+			if (true) {
+				console.log('表达式1为true执行的程序')
+				// 这种情况只会执行第一个表达式,后面的判断不会再执行
+			} else if (true) {
+				// 如果第一个表达式是false,才会执行第二个表达式.如果第二个表达式是true,之后的判断不会再执行了
+				console.log('之前表达式是false,表达式2为true执行的程序')
+			} else if (true) {
+				console.log('之前表达式是false,表达式3为true执行的程序')
+			} 
+			// 都是false,就没有执行程序
+		</script>
+	</body>
+</html>

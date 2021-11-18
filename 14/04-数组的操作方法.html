@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+            之前数组的操作方法
+                let arr = [1,2,3,4,5,6]
+                获取:通过[]语法,写入数组单元的索引下标,获取数组单元存储的数据
+                修改:通过[]语法,给已经存在的索引下标,进行重复赋值,后赋值的数据,会覆盖之前赋值的数据
+                新增:通过[]语法,给不存在的索引下标,进行赋值操作.效果是给数组新增单元,并且定义索引下标,并且赋值数据
+                定义的索引下标,最好是连续的索引下标,否则会产生空的数组单元
+                    arr[arr.length] = 数据
+            JavaScript中定义的数据的操作方法:
+                定义存储在 数组_proto_ 属性中,是可以直接调用执行的操作方法
+        */
+            let arr = ['Beijing', 'ShangHai', 'GuangZhou', 'ShenZhen', 'TianJin']
+            console.log(arr)
+        </script>
+    </body>
+</html>

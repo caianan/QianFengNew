@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                函数的进化升级
+                    基本步骤
+                        1.通过程序实现功能需求
+                        2.定义一个函数
+                        3.将程序完全定义在函数的{}中
+                    升级进化
+                        4.定义函数的执行结果返回值
+                            一个函数中,必须要通过关键词return来定义函数的执行结果返回值.定义的return之后的表达式表示的数据是多少,函数的执行结果的返回值就是多少
+            */
+            let arr = ['Beijing', 'shanghai', 'guangzhou', 'chongqing']
+            // arr.push()这个函数的执行效果是向数组的末位新增一个单元
+            // 执行结果的返回值是:新增单元之后,新数组的长度
+            // 执行结果的返回值 可以给变量存储,可以输出,可以弹窗等等,可以做任意的操作
+            let res = arr.push('shenzhen')
+            console.log(res) //返回值是新增单元之后,新数组的长度
+            console.log(arr)
+            let res2 = arr.pop()
+            console.log(res2)
+            console.log(arr)
+
+            // 封装的累加的函数
+            // 执行效果是1-100所有的正数累加求和,将结果输出到控制台
+            // 没有定义函数的执行结果返回值,如果是使用变量来存储,这个函数的执行结果返回值是undefined
+            function add() {
+                let sum = 0
+                for (let i = 1; i <= 100; i++) {
+                    sum += i
+                }
+                console.log(sum)
+                return sum
+            }
+            add()
+            // 快排
+        </script>
+    </body>
+</html>

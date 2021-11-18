@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                打印出等腰三角形,也就是打印出一个类似于金字塔的造型
+
+                    *               有4个空格1个星星
+                   * *              有3个空格2个星星
+                  * * *             有2个空格3个星星
+                 * * * *            有1个空格4个星星
+                * * * * *           有0个空格5个星星
+                
+                从上面整合规律  空格数=总行数-所在行数;星星数=行数
+            */
+            // 总行数
+            let line = 5
+            for (let i = 1; i <= line; i++) {
+                // 循环空格,空格数=总行数-所在行数
+                for (let j = 1; j <= line - i; j++) {
+                    document.write('&nbsp;')
+                }
+                // 循环星星,星星数=行数
+                for (let k = 1; k <= i; k++) {
+                    document.write('* ')
+                }
+
+                document.write('<br />')
+            }
+        </script>
+    </body>
+</html>

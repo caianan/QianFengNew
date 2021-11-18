@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				do...while
+					本质上还是while循环,只是语法形式特殊执行过程特殊
+					
+				let 循环变量初始化
+				do{
+					循环体 程序
+					步长
+				}while{判断进入循环的条件}
+				先执行的是 循环变量的初始化
+				然后执行的是 循环体和步长
+				最后执行的是 判断进入循环的条件
+				也就是 循环体和步长会无条件,先执行一次
+				之后判断,如果不符合条件,循环终止
+				如果符合条件,会继续循环
+			*/
+		    let string = ''
+			do{
+				str = window.prompt('do you love me?')
+			}while(str !== 'love')
+			// str 初始是空字符串
+			// 然后执行do{}中的程序
+			// 给str赋值输入框 输入的数据
+			// 之后 再执行 判断进入循环的条件,如果str变量中存储的数据不是love,就继续执行循环体中的程序
+		</script>
+	</body>
+</html>

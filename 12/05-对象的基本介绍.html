@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+            对象 object / obj
+            是JavaScript中的一种引用数据类型
+            数组:
+                数组是存储数据的集合，一个数组中可以存储多个数据单元，每一个数据单元都有JavaScript程序自动定义的从0开始的整数索引下标
+            对象:
+                也是存储数据的集合，一个对象中可以存储多个数据单元。
+                每一个对象的数据单元，必须是以键值对的语法形式存储数据
+                键名/键/属性:值
+            声明语法方式：构造函数语法
+                var obj = new Object();
+            声明语法方式2：字面量语法
+                let obj = {
+                    name:'Jack',
+                    age:18,
+                    sex:'Male'
+                };
+            对象的循环遍历
+                在JavaScript中，使用for in来循环遍历对象
+                语法格式
+                    自定义变量中存储对象的属性，可以使用对象[自定义变量]，获取对象单元的属性值
+                    for(const 自定义变量 in 对象) {
+                        执行程序
+                    }
+            for... in 也可以循环遍历数组
+                此时，自定义遍历中，存储的是数组的索引下标
+                for(const 自定义变量 in 对象) {
+                        执行程序
+                    }
+        */
+            let obj = {
+                name: 'Jack',
+                age: 18,
+                sex: 'Male',
+            }
+            console.log(obj)
+            /* 
+                第一次 key 存储对象第一个单元 name: 'Jack'的键名 name
+                obj[key]解析之后就是obj[name]
+                obj[key]获取的就是name键名存储的键值Jack
+                第二次 key 存储的对象 第二个单元 age: 18 的键名 age
+                obj[key]解析之后就是obj[age]
+                obj[key]获取的就是name键名存储的键值18
+                第三次 key 存储的对象 第二个单元 sex: 'Male' 的键名 sex
+                obj[key]解析之后就是obj[sex]
+                obj[key]获取的就是name键名存储的键值Male
+            */
+            for (var key in obj) {
+                console.log(obj[key])
+            }
+
+            // 使用for in循环遍历数组
+            let arr = ['Beijing', 'Shanghai', 'Shenzhen', 'Guanzhou']
+            for (const key in arr) {
+                console.log(arr[key])
+            }
+        </script>
+    </body>
+</html>

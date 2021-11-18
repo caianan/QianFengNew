@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                获取文件名的扩展名
+                    test.html
+                    test.png
+                    123.321.jpg
+                lastIndexOf() 可以获取最后一个点的索引下标,结果+1就是下一个字符的索引下标,也就是扩展名起始字符的索引下标
+                从这个索引下标开始,截取之字符串末位,就是完整的扩展名
+            */
+            let arrNew = []
+            let arr = ['test.html', 'test.png', '123.321.jpg', 'index.js']
+            for (let i = 0; i < arr.length; i++) {
+                const element = arr[i]
+                if (element.lastIndexOf('.') !== -1) {
+                    let index = element.lastIndexOf('.')
+                    // let suffixName = element.substring(index + 1, element.length)
+                    let suffixName = element.substr(index + 1)
+                    arrNew.push(suffixName)
+                }
+            }
+            console.log(arrNew)
+
+            let str = 'vue.js'
+            let res = str.substr(str.lastIndexOf('.') + 1)
+            console.log(res)
+        </script>
+    </body>
+</html>

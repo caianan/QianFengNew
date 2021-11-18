@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+		<script type="text/javascript">
+			/*
+				作业1:
+					随机生成1000 - 9999 的数值
+					判断数值是否是闺年
+				作业2:
+					随机生成1 - 100的整数
+					如果是偶数判断是否在20--40之间
+					如果是奇数判断是否在60--80之间
+				作业3:
+					独立完成if判断demo2 成绩表
+				作业4:
+					随机生成1-5的数值
+					每一个数值，对应输出一种产品的名称
+					if和switch都要
+				作业5:
+					使用输入框输入性别身高CM体重KG
+					男性计算标准体重(身高CM . 80) * 0.7
+					女性计算标准体重( 身高CM - 70) * 0.6
+					根据输入的体重,判断是否在标准体重范围内
+					标准体重*1.1或者标准体重*0.9
+					在这个范围内的体重都算是标准体重
+			*/
+			// one:随机生成1000 - 9999 的数值,判断数值是否是闺年
+			let year = parseInt(Math.random() * (9999 + 1 - 1000) + 1000)
+			year = 2020
+			if ((year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0)) {
+				console.log(`${year}是闰年`)
+			} else {
+				console.log(`${year}是平年`)
+			}
+			// two:随机生成1 - 100的整数
+			let num = parseInt(Math.random() * 100 + 1)
+			console.log(num)
+			if (num % 2 === 0) {
+				if (num >= 20 && num <= 40) {
+					console.log('是偶数并且在20--40之间')
+				} else if (num < 20 || num > 40) {
+					console.log('是偶数但是不在20--40之间')
+				}
+			} else if (num % 2 !== 0) {
+				if (num >= 60 && num <= 80) {
+					console.log('是奇数并且在60--80之间')
+				} else if (num < 60 || num > 80) {
+					console.log('是奇数但是不在在60--80之间')
+				}
+			}
+
+			// 随机生成1-5的数值
+			let product = parseInt(Math.random() * 5 + 1)
+			console.log(product)
+			if (product === 1) {
+				console.log('这是电视机')
+			} else if (product === 2) {
+				console.log('这是洗衣机')
+			} else if (product === 3) {
+				console.log('这是电冰箱')
+			} else if (product === 4) {
+				console.log('这是烘干机')
+			} else if (product === 5) {
+				console.log('这是挂烫机')
+			}
+			
+			// 使用switch case
+			switch (product){
+				case 1:
+					console.log('这是电视机')
+					break;
+				case 2:
+					console.log('这是洗衣机')
+					break;
+				case 3:
+					console.log('这是电冰箱')
+					break;
+				case 4:
+					console.log('这是烘干机')
+					break;
+				case 5:
+					console.log('这是挂烫机')
+					break;
+			}
+			
+			
+			// five
+			let sex = window.prompt('性别')
+			let weight = window.prompt('体重') - 0
+			let height = window.prompt('身高') - 0
+			console.log(sex)
+			console.log(weight)
+			console.log(height)
+			// 男性计算标准体重(身高CM - 80) * 0.7    女性计算标准体重( 身高CM - 70) * 0.6
+			// 标准体重*1.1或者标准体重*0.9 在这个范围内的体重都算是标准体重
+			let standartWeithtForMale = (height - 80) * 0.7
+			let standartWeightForFemale = (height - 70) * 0.6
+			if (sex === '男') {
+				if (weight>= standartWeithtForMale*0.9 || weight<= standartWeithtForMale*1.1) {
+					console.log(`体重${standartWeithtForMale},是标准体重`)
+				} else {
+					console.log(`体重${standartWeithtForMale},不是标准体重`)
+				}
+			} else if (sex === '女') {
+				if (weight>= standartWeightForFemale*0.9 || weight<= standartWeightForFemale*1.1) {
+					console.log(`体重${standartWeightForFemale},是标准体重`)
+				} else {
+					console.log(`体重${standartWeightForFemale},不是标准体重`)
+				}
+			}
+		</script>
+	</body>
+</html>

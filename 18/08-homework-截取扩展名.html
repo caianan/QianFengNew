@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 截取扩展名
+            let str = 'vue.js'
+            let name = str.substr(str.lastIndexOf('.') + 1)
+            console.log(name)
+            // 利用split来截取扩展名
+            let nameTwo = str.split('.')[str.split('.').length - 1]
+            console.log(nameTwo)
+
+            // 字符串替换使用循环语法完成,思路:只要字符串中有要替换的字符,
+
+            let str3 = 'abcdeadlsikdja'
+            // 使用while循环来替换a
+            while (true) {
+                if (str3.indexOf('a') !== -1) {
+                    str3 = str3.replace('a', 'A')
+                } else {
+                    break
+                }
+            }
+            console.log(str3)
+        </script>
+    </body>
+</html>

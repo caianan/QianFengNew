@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				switch的穿越
+					switch会从符合的数值程序开始,执行到最后一个程序,	除非遇到break语句
+					一般情况下要避免switch的穿越,因为会造成一种情况执行多种程序
+					实际中也会有一些switch穿越的应用
+					不同的数据数值执行相同的程序,可以使用switch穿越语法
+					不同的情况,执行相同的程序,使用switch 更方便
+			*/
+			/*
+				switch穿越的demo
+				随机生成1-12月的数值,根据随机数,输出这个月份多少天
+			*/
+			let month = parseInt(Math.random() * 12 + 1)
+			// switch 的写法
+			switch (month) {
+				// 这些情况执行的都是相同的程序
+				// 只需要在最后,定义一个执行的程序
+				// switch() 会按照穿越的语法执行,都执行到最后定义的程序,在这些相同穿越的程序后,添加一个break就可以了
+				case 1:
+				case 3:
+				case 5:
+				case 7:
+				case 8:
+				case 10:
+				case 12:
+					console.log(`${month}月是31天`)
+					break;
+				case 4:
+				case 6:
+				case 9:
+				case 11:
+					console.log(`${month}月是30天`)
+					break;
+				default:
+					console.log(`${month}月平年是28天,闰年是29天`)
+					break;
+			}
+		</script>
+	</body>
+</html>

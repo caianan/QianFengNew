@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+            forEach 循环遍历
+            forEach 只能循环遍历数组，不能循环遍历对象
+                定义的变量，不用写var 关键词，function会帮助定义的时候写关键词。
+                    变量1中 存储数组单元的数据
+                    变量2中 存储数组单元的索引下标
+                    变量3中 存储原始数组单元
+
+                    变量最少定义一个，最多定义三个
+                数组.forEach(function(变量1，变量2，变量3)){
+                    执行程序
+                }
+            for...in 循环数组的时候存储索引下标，这个下标是字符串类型
+            forEach 循环数组的时候存储索引下边，这个下标是数值类型
+        */
+            let arrs = ['Beijing', 'Shanghai', 'Shenzhen', 'Guanzhou']
+            arrs.forEach(function (val, key, array) {
+                console.log(val, key, array)
+            })
+            for (const key in arrs) {
+                console.log(key, arrs[key])
+            }
+        </script>
+    </body>
+</html>

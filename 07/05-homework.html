@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				定义变量,赋值数值
+					1.数值是奇数 console.log('奇数')
+					  数值是偶数 console.log('偶数')
+					  if判断和三元运算符,两种方法
+					2.数值可以被2和3同时整除
+					3.数值可以被2整除 或者被3整除 true
+					  数值不能被2整除 或者被3整除 false
+					
+			*/
+			let int = 90;
+			// if判断
+			if (int % 2 === 0) {
+				console.log('奇数')
+			} else {
+				console.log('偶数')
+			}
+			// 三元运算符
+			console.log(int % 2 === 0 ? '奇数' : '偶数')
+
+			// 数值可以被2和3同时整除
+			if (int % 2 === 0 && int % 3 === 0) {
+				console.log('ok')
+			} else {
+				console.log('no')
+			}
+			// 另外一种写法,可以同时被2和3整除,也就是可以被6整除
+			if (int % 6 === 0) {
+				console.log('ok')
+			} else {
+				console.log('no')
+			}
+			let res = int % 2 === 0 && int % 3 === 0 ? 'ok' : 'no'
+			console.log(res)
+			// 数值可以被2整除 或者被3整除 true 数值不能被2整除 或者被3整除 false
+			if (int % 2 === 0 || int % 3 === 0) {
+				console.log('true')
+			} else {
+				console.log('false')
+			}
+			int % 2 === 0 || int % 3 === 0 ? console.log('true') : console.log('false')
+		</script>
+	</body>
+</html>

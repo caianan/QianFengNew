@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				补充对象的操作方法
+					删除对象的单元
+					语法形式: 
+						delete(对象.属性)
+						delete(对象['属性'])
+			*/
+			let obj = {
+				name: 'Jack',
+				age: 18,
+				sex: 'F',
+				addr: 'Beijing',
+				phone: 150299
+			}
+			delete(obj.name)
+			console.log(obj) //{age: 18, sex: 'F', addr: 'Beijing', phone: 150299}
+			delete(obj['addr'])
+			console.log(obj) //{age: 18, sex: 'F', phone: 150299}
+		</script>
+	</body>
+</html>

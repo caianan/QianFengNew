@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				输入框输入数据
+					window.prompt('提示信息')
+					可以使用变量来存储输入的数据数值
+				数据类型转换
+					https://www.cnblogs.com/cui-ting/p/10646715.html
+			*/
+		    // 在输入框输入的数据,在点击确定后,会存储在res中
+			// 点击取消res中存储null,输入的数据一定是字符串格式
+			// 如果是数值,需要执行运算,必须要先转化为数值类型
+			// 转化方式1 Number(window.prompt('Please Input')) 强制转化为数值类型
+			// 转化方式2 执行一个不影响大小的非加法运算
+		    let res = Number(window.prompt('Please Input'))
+			console.log(res)
+		</script>
+	</body>
+</html>
