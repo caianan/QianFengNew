@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				其他类型强制转化为字符串类型
+					String(变量)
+						转化原则与自动转化原则相同,不会改变变量中存储的原始数值
+					变量.toString()
+						不会改变变量中存储的原始数值
+						转化原则基本与自动转化相同
+						如果变量中存储的是undefined ,undefined不能使用 变量.toString() 方法
+						如果变量中存储的是null ,undefined不能使用 变量.toString() 方法
+						变量中存储的数值,可以使用变量.toString(),在小括号中设定转化的进制,进制范围是2-36
+			*/ 
+			console.log(String(true))
+			console.log(String(123))
+			console.log(String(null))
+			console.log(String(undefined))
+			console.log(String(NaN))
+			console.log(String([1,2,3]))
+			// 不会改变变量中存储的原始数值
+			let int = 100
+			String(int)
+			console.log(int)
+			
+			// 变量.toString()
+			let intTwo = 123
+			console.log(intTwo.toString())
+			let intThree = NaN
+			console.log(intThree.toString()) //NaN
+			let bool = true
+			console.log(bool.toString())
+			let boolTwo = true
+			console.log(boolTwo.toString())
+			// 如果变量中存储的是undefined ,undefined不能使用 变量.toString() 方法
+			let und = undefined
+			// console.log(und.toString())
+			let nul = null
+			// console.log(nul.toString())
+			let arr = [1,2,3]
+			console.log(arr.toString()) //1,2,3
+			let obj = {name:'Jack'}
+			console.log(obj.toString()) //[object Object]
+			let fun = function(){}
+			console.log(fun.toString()) //function(){}
+		</script>
+	</body>
+</html>

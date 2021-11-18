@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				其他数据类型转化为字符串类型
+				字符串拼接时,其他数据类型会自动转化为字符串类型
+				转化原则
+					布尔类型直接转化为字符串
+						true ---- 'true'
+						false ---- 'false'
+					数值类型
+						直接转化为字符串
+						100 ---- '100'
+						1.123 ---- '1.123'
+						2e3 ---- '2e3'
+						NaN ---- 'NaN'
+					undefined
+						直接转化为字符串
+							undefined ---- 'undefined'
+					null
+						直接转化为字符串
+							null ---- 'null'
+					数组
+						数组转化为字符串
+						获取数组中的每一个数据单元,以逗号为间隔,拼接成一个字符串
+					对象
+						所有对象,不管存储的是什么数据,同意转化为[object Object]
+					函数
+						将函数程序的所有代码,都转化为字符串内容
+						function fun(){} ---- 'function fun(){}'
+			*/
+		   // 布尔类型
+		   console.log('Beijing'+true) //Beijingtrue
+		   // 数值类型 
+		   console.log('Beijing'+100) //Beijing100
+		   console.log('Beijing'+1.123) //Beijing1.123
+		   console.log('Beijing'+2e3) //Beijing2000
+		   // 数组
+		   console.log('Beijing'+[1,2,3,4]) //Beijing1,2,3,4
+		   // 对象
+		   console.log('Beijing'+{name:'Jack'}) //Beijing[object Object]
+		</script>
+	</body>
+</html>

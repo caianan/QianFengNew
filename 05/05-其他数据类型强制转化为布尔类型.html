@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				其他类型,强制转化为布尔类型
+					使用的方法
+						Boolean(变量/数值) 强制转化为布尔类型
+						转化原则与自动转化为布尔值完全相同
+			*/ 
+			console.log(Boolean(0)) //false
+			console.log(Boolean('')) //false
+			console.log(Boolean(undefined)) //false
+			console.log(Boolean(null)) //false
+			console.log(Boolean(NaN)) //false
+			
+			console.log(Boolean(123)) //true
+			console.log(Boolean([])) //true
+			console.log(Boolean({})) //true
+			console.log(Boolean(function(){})) //true
+			// 不会改变,存储数据的原始数值
+			let int = 100
+			// 强制将int存储的数据转化为布尔值,函数方法Boolean()执行结果是true,但是int中存储的数值不会改变,还是100
+			Boolean(int)
+			console.log(int) //100
+			// 除非将函数方法Boolean(int)的执行结果,赋值给变量int才会改变变量int中存储的数据
+		</script>
+	</body>
+</html>

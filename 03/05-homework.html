@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				1.掌握基本数据类型的语法形式
+					a.存储二进制10001100 以八进制形式输出
+					b.存储八进制1234567 以十进制形式输出
+					c.存储十六进制ff 以二进制形式输出
+				2.字符串练习
+					有语文100分数学99分 英语98分
+					输出 我今天语文考了xx 分 数学考了xx分 英语考了xx分,总分xx分
+				3.数组练习
+					将索引下标是0的单元修改为 xxx
+					新增两个单元分别存储 123 456 数值
+			*/
+
+			var int = 0b10001100
+			console.log(int)
+			console.log(int.toString(8))
+			let intTwo = 01234567
+			console.log(intTwo)
+			console.log(intTwo.toString(10))
+			let intThree = 0xff
+			console.log(intThree)
+			console.log(intThree.toString(2))
+
+			let chinese = 100
+			let circle = 99
+			let english = 98
+			console.log(`我今天语文考了${chinese}分 数学考了${circle}分 英语考了${english}分,总分${chinese+circle+english}分`)
+			console.log('我今天语文考了' + chinese + '分 数学考了' + circle + '分 英语考了' + english + '分,总分' + (chinese + circle + english) + '分')
+			let arr = ['BeiJing','ShangHai','TianJin']
+			console.log(arr)
+			arr[arr.length]='NanJing'
+			arr[arr.length]='GuangDong'
+			console.table(arr)
+		</script>
+	</body>
+</html>

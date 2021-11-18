@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			console.log(100*NaN) //NaN
+			console.log(100/NaN) //NaN
+			console.log(100+NaN) //NaN
+			console.log(100-NaN) //NaN
+			/*
+				NaN 表示执行结果是数值类型,但是不是一个具体的数字
+				有NaN参与的运算,执行结果一定是NaN
+				其他数据类型转化为数值类型
+					1.什么时候发生转化
+						算数运算符 + - * / .....
+					2.转化原则
+						布尔值:
+							true ---- 1
+							fasle ---- 0
+						null ---- 0
+						undefined ---- NaN
+						数组 ---- NaN
+						对象 ---- NaN
+						函数 ---- NaN
+						字符串
+							如果是 加号 同时有字符串参与,执行的是字符串拼接操作,如果是其他运算符,执行的是算数
+							原则:整个字符串,只要有不符合数字规范语法的内容就会转化为NaN;整个字符串完全符合数字规范语法,转化为对应的数值
+						注意:
+							空数组 数组只存储0
+							空字符串/都是控股的字符串 转化为0
+			*/ 
+		    // 布尔类型
+			console.log(100-true) //99
+			console.log(100-false) //100
+			// null
+			console.log(100-null) //100
+			// undefined,undefined转化为NaN
+			console.log(100-undefined) //NaN
+			// 数组
+			console.log(100-[1,2,3]) //NaN
+			// 对象
+			console.log(100-{}) //NaN
+			// 函数
+			console.log(100-function fun(){}) //NaN
+			
+			// 字符串
+			// 完全符合数值规范语法,转化为对应的数值
+			console.log(100-'100.1') //-0.09999999999999432
+			console.log(100-'99') //1
+			console.log(100-'NaN') //NaN
+			// 只要有不符合数字规范语法的内容就会转化为NaN
+			console.log(100-'Beijing') //NaN
+			console.log(100-'abc100') //NaN
+			console.log(100-'100abc') //NaN
+			console.log(100-'2ef35') //NaN
+			
+			// 思考
+			console.log(100-'true') //NaN
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				NaN: not a number
+				有非数字参与的数字运算,执行结果就是NaN
+				NaN表示意思是表示一个数值类型,但是不是一个具体的数值
+				两个NaN永远不会相等
+			*/
+		   console.log(100-90)
+		   // 执行程序的结果表示是数值类型,但是又不是一个具体的数值
+		   // 100-'Beijing'的结果是数值类型,但是不是某一个具体的数
+		   console.log(100-'Beijing')//NaN
+		   console.log(100-true)//99
+		   // 两个NaN永远不会相等
+		   console.log(NaN==NaN) //false
+		</script>
+	</body>
+</html>

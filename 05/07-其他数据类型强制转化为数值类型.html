@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				其他数据类型强制转化为数值类型
+					1.Number(数值/变量) 转化原则与自动转化原则完全相同,不会改变变量存储的原始数值
+					2.parseInt(数值/变量) 获取数值的整数部分
+					转化原则:
+						从左起,第一个字符开始,获取符合整数规范的内容
+						如果,第一个字符,就不符合整数规范,执行结果是NaN
+					3.parseFloat(数值/变量) 获取数值的浮点数部分
+						转化原则:
+							从左起,第一个字符开始,获取符合浮点数规范的内容
+							如果,第一个字符,就不符合整数规范,执行结果是NaN
+			*/ 
+			// Number(数值/变量)
+			console.log(Number(true))
+			console.log(Number(false))
+			console.log(Number(null)) //0
+			console.log(Number(undefined))  //NaN
+			// 空数组也是转化为0,[0]转化为0,[1]转化为1
+			console.log(Number([])) //0
+			console.log(Number([0])) //0
+			console.log(Number([1])) //1
+			console.log(123-[]) //123
+			console.log(123-[0]) //123
+			console.log(123-[1]) //122
+			// 
+			console.log(Number({})) //NaN
+			console.log(Number(function(){} )) //NaN
+			
+			// 字符串
+			console.log(Number('100'))
+			console.log(Number('10.1'))
+			console.log(Number('2e2'))
+			console.log(Number('NaN'))
+			
+			console.log(Number('12DF3')) //NaN
+			
+			// 空字符串和都是空格的字符串都转化为0
+			console.log(Number('')) //0
+			console.log(Number('  ')) //0
+			
+			// parseInt 
+			// 如果是数值,直接获取整数部分,小数部分完全舍弃
+			// 执行结果是100,只获取整数部分,小数部分完全舍弃
+			console.log(parseInt(100.9999)) //100
+			// 布尔类型
+			// 从左起第一个字符是t不符合,就是NaN
+			console.log(parseInt(true)) //NaN
+			console.log(parseInt(false)) //NaN
+			
+			console.log(parseInt(undefined)) //NaN
+			console.log(parseInt(null)) //NaN
+			
+			console.log('=========')
+			// 从第一个数据单元开始进行转化
+			console.log(parseInt([])) //NaN
+			console.log(parseInt([0])) //0
+			console.log(parseInt([1])) //1
+			console.log(parseInt([2,3,4])) //2
+			console.log(parseInt('1',1)) //NaN
+			
+			console.log('=========')
+			console.log(parseInt({})) //NaN
+			console.log(parseInt({name:'Jack'})) //NaN
+			console.log(parseInt({0:100})) //NaN
+			
+			console.log('=========')
+			console.log(parseInt(function(){} )) //NaN
+			
+			console.log('=========')
+			console.log(parseInt('100')) //100
+			console.log(parseInt('100.123')) //100
+			console.log(parseInt('2e2')) //2
+			console.log(parseInt('NaN')) //NaN
+			
+			console.log('=========')
+			console.log(parseInt('100ABC')) //100
+			console.log(parseInt('ABC100')) //NaN
+			console.log(parseInt('2e2AA')) //2
+		</script>
+	</body>
+</html>

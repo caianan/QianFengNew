@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+	
+    /*
+    * 数值类型
+    *   JavaScript中数值类型分成3种
+    *       整数 浮点数(小数) NaN
+    *   整数:
+	* 		数值的存储和输出 默认都是以十进制方式执行
+	* 		其他进制数值存储的语法
+	* 			二进制 数值前添加0b或者0B
+	* 			八进制 数值前添加0
+	* 			十六进制 数值前添加0x或者0X
+    *	
+    * */
+	let int = 0b100
+	console.log(int) //4
+	// 存储的时候是存储二进制100,在打印的时候会自动将二进制100转化为十进制进行输出
+	// 如果需要使用指定进制输出数值
+	// 变量.toString(需要的进制)
+	// 进制的范围是2-36,进制是可以任意设定的,只要范围是2-36就可以了
+	console.log(int.toString(2)) //100
+	let intTwo = 0100
+	console.log(intTwo) //64
+	console.log(intTwo.toString(8))//100
+	let intThree = 0x100
+	console.log(intThree) //256
+	console.log(intThree.toString(16)) //100
+	console.log(intThree.toString(36))//74
+	/*
+	总结:整数有不同的进制,任何数值默认都是以10进制数值形式存储,十进制数值形式输出
+	十进制转化为二进制 let int = 0b100
+	指定进制
+		变量.toString(进制的数值)
+	*/
+</script>
+</body>
+</html>

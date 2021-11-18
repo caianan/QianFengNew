@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+				简单介绍数组
+					数组是引用数据类型
+					变量中存储数据,默认只能存储一个数据单元,如果在赋值新的数据单元就是重复赋值,后赋值的数据会覆盖之前赋值的数据
+					一个变量中如果要同时存储多个数据,就要使用数组
+					数组的定义:存储数据的集合
+					数组的定义
+						1.构造函数语法定义数组 不常用
+							let 数组变量 = new Array()
+						2.自变量语法
+							let 数组变量 = [数据1,数据2,数据3]
+					JavaScript程序会给每一个 数据单元自动添加从0开始的整数编号,这个整数编号成为索引下标
+					每一个数组天生就有一个length属性,表示数组的长度,也就是单元个数
+					使用length的方法,数组变量.length
+					数组中索引下标的范围 0-数组.length-1
+					数组中通过索引下表获取对应单元存储的数据
+					获取数组数据:数组变量[索引下标]
+					修改数组数据:数组变量[索引下表]=新的数组
+						这个所以下表就是已经存在的索引下标,对这个索引下标进行重复赋值,新赋值的数据会覆盖之前存储的数据
+					新增单元索引下标
+						最好是连续的,如果不是连续的会产生empty 空数组单元	
+						实际项目中为了确保索引下标连续,一般使用数组.length来设定新增单元的索引下标
+				
+			*/
+		   let arr = ['BeiJing','ShangHai','GuangZhou']
+		   console.log(arr)
+		   console.table(arr)
+		   console.log(arr.length)
+		   console.log(arr[1])
+		   arr[1] = 'ShenZhen' //ShangHai
+		   console.log(arr)
+		   console.log(arr[1]) //ShangHai
+		   // 对不存在的索引下表进行赋值操作
+		   arr[5] = 'ChengDu'
+		   console.log(arr) //['BeiJing', 'ShenZhen', 'GuangZhou', 空 ×2, 'ChengDu']
+		   arr[arr.length]='HaiNan'
+		   console.log(arr) //['BeiJing', 'ShenZhen', 'GuangZhou', 空 ×2, 'ChengDu', 'HaiNan']
+		   
+		</script>
+	</body>
+</html>
