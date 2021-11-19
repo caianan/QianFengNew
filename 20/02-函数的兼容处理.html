@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+                函数的兼容处理
+                    函数的兼容处理，就是要兼容判断执行函数程序中出现的数据错误问题
+
+                补充介绍两个方法
+                    Math.min()
+                        返回多个参数中的最小值
+                    Math.max()
+                        返回多个参数中的最大值
+                复习
+                    parseInt()
+                        执行结果，要么是是数值，要么是NaN
+                        如果是NaN就是一个非法数据，不能执行累加
+                    isNaN(变量/数据)
+                        判断输入的变量/数据是不是NaN
+                        如果是NaN,结果是true
+                        如果不是NaN,结果是false
+
+
+
+            */
+            console.log(parseInt('12abc'))
+            console.log(Math.min(1, 2, 3, 4, 5, 6)) //1
+            console.log(Math.max(1, 2, 3, 4, 5, 6)) //6
+            console.log(getSum(1, 100))
+            console.log(getSum('beijing', 'shanghai'))
+            // 累加求和
+            // 目前这个函数，只能是a是较小数值，b是较大数值
+            // 如果a是较大数值，b是较小数值
+            function getSum(a, b) {
+                // 如果输入错误数据类型的数值，要终止程序执行
+                // isNaN(变量/数据),如果是NaN返回结果就是true，如过不是NaN返回结果就是false
+                // 逻辑或的运算一真为真，所以只要a或者b中有一个值是NaN，那么这个逻辑判断就是true，就会进入到这个判断中
+                if (isNaN(parseInt(a)) || isNaN(parseInt(b))) {
+                    return '您输入的数据有误，请输入整数数值'
+                }
+                a = parseInt(a)
+                b = parseInt(b)
+                let res = 0
+                let max = Math.max(a, b)
+                let min = Math.min(a, b)
+                // 可以确保 起始是较小值，进入条件是较大值
+                for (let i = min; i <= max; i++) {
+                    res += i
+                }
+                return res
+            }
+        </script>
+    </body>
+</html>

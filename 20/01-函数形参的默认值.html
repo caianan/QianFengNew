@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+                函数形参的默认值
+                    在封装定义函数的时候,可以给形参同时赋值一个默认值.在调用执行函数的时候,如果没有给形参赋值实参,会执行形参的默认值;如果给形参赋值实参，赋值的实参会覆盖之前存储的默认，执行数据的是实参
+
+                    带有默认值的形参，一定要定义在函数的末位
+                    因为函数中形参赋值实参是按照顺序一一对应赋值
+            */
+
+            let str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+            console.log(fun(6, str))
+            // 执行调用函数的时候,没有给第二个参数赋值,会执行默认数值
+            // 也是封装定义函数时,给形参二赋值的 1234567890 这个默认值字符串
+            console.log(fun(4))
+            // 如果给第二个参数进行赋值
+            // 等于对第二个参数进行重复赋值,后赋值的实参会覆盖之前的默认值
+            // 赋值了实参，就会按照实参来执行程序
+            console.log(fun(4, str))
+            // 获取随机验证码函数
+            // 参数1 验证码的位数
+            // 参数2 验证码的内容
+            // 在封装定义函数的同时,给函数形参赋值默认值
+            function fun(num, string = '1234567890') {
+                let res = ''
+                // 如果将字符串设定为固定内容,也就是验证码的内容是固定值
+
+                for (let i = 0; i < num; i++) {
+                    let rand = parseInt(Math.random() * (string.length - 1 + 1))
+                    if (res.indexOf(string[rand]) === -1) {
+                        res += string[rand]
+                    } else {
+                        i--
+                    }
+                }
+                return res
+            }
+        </script>
+    </body>
+</html>
