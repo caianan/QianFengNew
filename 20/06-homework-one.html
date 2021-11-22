@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                封装获取验证码
+                    参数1:验证码位数
+                    参数2:验证码内容范围
+                    默认是数字小写字母大写字母组成的字符串
+            */
+            /* 
+                @param number num 参数的位数
+                @param string str 验证码范围
+                @return string VCcode 验证码
+            */
+            function getVerificationCode(num, str = 'abcdefghijklmnopqrstuvwxyz0123456789') {
+                let VCcode = ''
+                while (VCcode.length < num) {
+                    let index = parseInt(Math.random() * (str.length - 1 + 1))
+                    if (VCcode.indexOf(str[index]) === -1) {
+                        VCcode += str[index]
+                    }
+                }
+                return VCcode
+            }
+            console.log(getVerificationCode(6))
+            console.log(getVerificationCode(6, '0123456789'))
+        </script>
+    </body>
+</html>

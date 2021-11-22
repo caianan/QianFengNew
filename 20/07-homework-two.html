@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div>我的幺幺是个猪</div>
+        <script>
+            /*
+                封装随机颜色函数
+                    方法1:通过-一个数组数组中存储所有css3 支持的颜色单词
+                    随机获取一个单词作为返回值
+                    方法2: #加6位十六进制数值字符串
+                    方法3: 'rgb( 数值1,数值2,数值3)’字符串
+                    数值1数值2数值3是0-255的随机数值
+            */
+            /*
+                    @param array colorArray
+                    @return string color
+                */
+            /* function getColor(colorArray) {
+                    let index = parseInt(Math.random() * (colorArray.length - 1 + 1))
+                    let color = colorArray[index]
+                    return color
+                }
+                console.log(getColor(['red', 'green', 'yellow'])) */
+
+            /*
+                    @param string str
+                    @return string color
+                */
+            /* function getColor(str = '0123456789ABCDEFG') {
+                let color = '#'
+                while (color.length < 7) {
+                    let index = parseInt(Math.random() * str.length)
+                    color += str[index]
+                }
+                return color
+            }
+            console.log(getColor()) */
+
+            /* 
+                @param number number    
+                @return string color
+            */
+            function getColor() {
+                return `rgb(${parseInt(Math.random() * 256)},${parseInt(Math.random() * 256)},${parseInt(
+                    Math.random() * 256
+                )})`
+            }
+            console.log(getColor())
+            let obj = document.querySelector('div')
+        </script>
+    </body>
+</html>
