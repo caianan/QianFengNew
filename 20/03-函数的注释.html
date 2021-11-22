@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                函数的注释
+                    实际项目中,所有的自定义函数,都要定义函数的注释
+                    每个项目团队有自己的注释风格,我们这里简单介绍一些函数的注释.
+                    以累加求和为例,说明一下
+                函数的注释一般分为3个部分
+                    1.函数的基本介绍
+                    2.函数的参数返回值的介绍
+                        参数介绍 
+                            @param 数据类型 行藏名称 基本作用
+                        返回值介绍
+                            @return 数据类型 行藏名称 基本作用
+                    3.函数的基本说明
+                        一般包括函数的执行原理和函数的兼容性,报错机制等等
+                        越详细越好
+            */
+            /*
+                累加求和函数
+                @param integer a 累加求和数值1
+                @param integer b 累加求和数值2
+                @return integer res 累加求和的结果
+                数值1和数值2之间,所有整数的累加求和
+                数值大小顺序有兼容处理
+                输入的数据必须是包含整数部分的数据
+            */
+            function getSum(a, b) {
+                if (isNaN(parseInt(a)) || isNaN(parseInt(b))) {
+                    return '您输入的数据有误，请输入整数数值'
+                }
+                a = parseInt(a)
+                b = parseInt(b)
+                let res = 0
+                let max = Math.max(a, b)
+                let min = Math.min(a, b)
+
+                for (let i = min; i <= max; i++) {
+                    res += i
+                }
+                return res
+            }
+            /* 
+                总结定义封装函数的基本步骤
+                基本步骤
+                    1.通过代码实现功能需求
+                    2.定义一个函数,设定函数名称
+                    3.将代码封装在函数之中
+                升级
+                    4.定义函数的形参,如果有需要可以定义默认值
+                    5.定义函数的返回值
+                    6.做兼容和报错处理
+                    7.定义函数说明
+            
+            */
+        </script>
+    </body>
+</html>

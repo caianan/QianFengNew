@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                函数中的arguments
+                    arguments是每一函数天生就具有的一个功能,是JavaScript定义的函数功能
+                    以伪数据的形式存调用执行函数时输入的所有实参
+                    本质上是定义在函数内部的变量
+                    调用执行函数时,输入的所有实参,都会以伪数据的形式在arguments中也有存储
+                    这些都是JavaScript自动执行的
+                    arguments中存储数据,严格来说是以伪数组形式存储,并不是一个真正的数组
+                    但是,支持数组的基本操作方法,也就是通过[]语法来操作
+                    只有length属性,不支持常见的数组操作函数
+                        数组.indexOf() 数组.forEach() 等等都不支持
+                    只能使用for循环来遍历伪数组arguments
+                    arguments 一般是不定项参数函数使用
+                        不定项参数函数,也就是函数的实参有几个不确定的函数
+            */
+            function fun() {
+                // 以伪数组的形式存储数组
+                console.log(arguments)
+                // 支持[]语法操作
+                console.log(arguments[3])
+            }
+            fun()
+            fun(1, 2, 3)
+            fun(1, 2, 3, 'beijing', 'shanghai')
+
+            console.log('=========')
+            console.log(randAdd(3, 4, 5))
+            console.log(randAdd(3, '456', 5))
+            // ... 叫展开运算符
+            // 将数组中的数据展开,每一个数据单元是一个实参,赋值给函数执行
+            console.log(randAdd(...[1, 2, 3, 4, 5, 6]))
+            // 任意个参数累加求和
+            // 实际执行程序时,输入的实参是什么,有几个并不能确定
+            randAdd(1, 2, 3)
+
+            function randAdd() {
+                let res = 0
+                for (let i = 0; i <= arguments.length - 1; i++) {
+                    let num = parseFloat(arguments[i])
+                    if (isNaN(num)) {
+                        return '您输入的数据有误,请输入整数或者小数'
+                    }
+                    res += num
+                }
+                return res
+            }
+        </script>
+    </body>
+</html>

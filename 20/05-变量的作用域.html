@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                变量的作用域
+                    所谓的变量的作用域就是变量可以使用的范围
+                    变量按照使用范围区别,可以分为两类变量
+
+                    全局作用域变量
+                        可以在程序的任意位置使用
+                        定义在函数外部的变量,都是全局作用域变量
+                    局部作用域变量/私有作用域变量
+                        只能在函数内部使用
+                        函数外部要直接使用会报错
+                        定义在函数内部的变量,以及函数的形参都是局部作用域变量
+
+            */
+            // 定义在函数外部的变量,是全局作用域变量
+            // 可以在函数内部外部,都能使用调用
+            let num = 100
+            console.log(num)
+            function func() {
+                console.log(num)
+            }
+            func() //100
+            function func2() {
+                let insideNum = 100
+                return insideNum
+            }
+            console.log(func2()) //100
+            console.log(insideNum) // insideNum is not defined
+        </script>
+    </body>
+</html>
