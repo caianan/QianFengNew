@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                函数中变量的赋值
+                    函数中变量的赋值操作的基本原则:就近原则
+                        函数自己作用域有这个变量,就给这个变量赋值
+                        函数自己作用域中没有这个变量,就给父级函数中这个变量赋值
+                        父级程序中,也没有这个变量,给全局作用域赋值
+
+                        都没有这个变量,变量赋值程序升级为变量声明程序
+                        会在函数内部定义声明一个全局作用域变量
+                let int = 100 
+                    声明变量
+                console.log(int)
+                let a = 100
+                let b = 100+int
+                    调用使用变量
+                int = 200
+                    给变量赋值
+
+            */
+            // 全局作用域变量int
+            // let int = 0
+            /* function f() {
+                // let int = 100
+                // int = 'beijing'这个赋值操作是对函数f 作用域中的int赋值
+                int = 'beijing'
+                // 输出的int也是函数f作用域中变量int的数值,之前存储100,之后被赋值beijing,最终存储的是beijing
+                console.log(int)
+            }
+            f()
+            console.log(int) */
+            let int = 0
+            function f() {
+                int = 'beijing'
+
+                console.log(int)
+            }
+            f()
+            console.log(int)
+        </script>
+    </body>
+</html>

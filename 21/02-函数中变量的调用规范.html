@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                函数中变量调用的原则
+                    全局作用域变量和局部作用域变量
+                        全局作用域变量 可以在函数内部和函数外部都调用
+                        局部作用域变量 只能在函数内部调用
+                    在函数内部输出变量/运算变量... 都是在调用变量
+                    必须遵守 函数中变量调用的原则:就近原则
+                        自己的作用域中有这个变量,就用自己的变量
+                        自己的作用域中没有这个变量,就用父级程序的变量
+                        父级程序没有这个变量,就用全局作用域变量
+                        如果都没有这个变量,调用报错
+                        只会向父级程序找寻变量,不会向子集程序找寻变量
+            */
+            let int = 100
+            function f() {
+                let int = 200
+                // 父级调用父级函数作用域对应的数据
+                console.log('我是父级函数f调用的结果:' + int)
+                function fun() {
+                    let int = 300
+                    // 子级调用子级函数作用域对应的数据
+                    console.log('我是子级函数fun调用的结果:' + int)
+                }
+                fun()
+            }
+            f()
+        </script>
+    </body>
+</html>
