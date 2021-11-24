@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 在程序正式执行之前,JavaScript会先把整个代码预先读一遍,提前记录使用var声明的变量和使用function声明的函数
+            // 当我们提前调用,使用var声明的变量,JavaScript程序会知道有这么一个变量,但是目前还没有赋值,执行结果是undefined
+            console.log(int) //undefined
+            // 当我们提前调用,使用function声明的函数,JavaScript程序会知道有这么一个函数,而且可以正常的调用执行
+            fun() //我是func函数的程序
+            // 提前调用赋值式函数/ 匿名函数
+            // 本质上是在调用一个使用var声明的变量
+            // 正确的变量中应该存储函数中存储的信息
+            // 因为是提前调用，使用var声明的变量，他的执行结果是undefined
+            // 如果当作一个函数来调用，结果就是报错 undefined不是一个函数
+            f() //f is not a function
+            // 使用var关键词声明一个变量
+            var int = 100
+            // 使用function声明一个函数
+            function fun() {
+                console.log('我是func函数的程序')
+            }
+            var f = function () {
+                console.log('我是赋值式函数的程序')
+            }
+        </script>
+        <script>
+            /* 
+                JavaScript程序的 预解析/预编译/预解释
+                    JavaScript是一门 预解析/预编译/预解释 的计算机语言
+                    在正式执行JavaScript代码之前,会先将JavaScript程序预先 解释/编译/解析一边
+                    遇到 var和function 关键词定义的变量和函数会做特殊处理
+                    如果是var 声明的变量提前执行,JavaScript预解析/预编译/预解释机制会告诉程序有这样一个变量,可以被调用,但是赋值内容是undefined,也就是提前调用,变量被定义,但是变量没有正确赋值
+                    如果是function 声明的变量提前执行,JavaScript预解析/预编译/预解释机制会告诉程序有这样一个函数存在,可以被提前调用,提前执行
+            */
+        </script>
+    </body>
+</html>

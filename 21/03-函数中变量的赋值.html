@@ -46,6 +46,24 @@
             }
             f()
             console.log(int)
+
+            /* 
+                扩展内容:
+                    var int = 100
+                    int2 = 100
+
+                    区别
+                        预解析结果不同
+                        也就是提前调用结果不同
+                        int = 100 本身是一个赋值语句,声明定义了一个全局作用域变量int2,同时赋值存储数据100
+            */
+            // 提前调用
+            console.log(num) //undefined
+            console.log(num2) //Uncaught ReferenceError: num2 is not defined
+            var num = 100
+            console.log(num) //结果是100
+            num2 = 100
+            console.log(num2) //结果也是100,本身是一个赋值语句,声明定义了一个全局作用域变量num2,同时赋值存储数据100
         </script>
     </body>
 </html>
