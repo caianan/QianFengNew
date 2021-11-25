@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            html {
+                font-size: 62.5%;
+            }
+            body {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            table {
+                border-spacing: 0;
+                border-collapse: collapse;
+            }
+            table tr td {
+                border: 1px solid #000;
+                width: 15rem;
+                height: 5rem;
+                text-align: center;
+                font-size: 1.4rem;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <td>序号</td>
+                    <td>姓名</td>
+                    <td>性别</td>
+                    <td>年龄</td>
+                    <td>地址</td>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 实际项目中，tbody中是空内容
+                    tbody中所有的内容都是根据我们的数据动态生成的
+                -->
+            </tbody>
+            <script>
+                // 一阶段 主要学习的是 静态页面的制作
+                // 二阶段 要完成动态页面
+                // 1.操作的交互 2.数据的交互
+                // 实际项目中的数据，应该是我们数据库获取的数据结果
+                // 咱们现在没有学习数据库操作，定义一个数组模拟数据库操作结果
+                // 数组的结构是，数组中存储对象，对象的属性属性值是具体的数组数值等
+                // 根据数组动态生成页面内容
+                let arr = [
+                    { id: 1, name: 'Jack', sex: 'male', age: 18, addr: 'Beijing' },
+                    { id: 2, name: 'Tom', sex: 'male', age: 19, addr: 'ShangHai' },
+                    { id: 3, name: 'Tom', sex: 'male', age: 19, addr: 'ShangHai' },
+                    { id: 4, name: 'Tom', sex: 'male', age: 19, addr: 'ShangHai' },
+                    { id: 5, name: 'Tom', sex: 'male', age: 19, addr: 'ShangHai' },
+                ]
+                // 循环arr数组，利用模板字符串将数组写入，最后输出字符串
+                // table表格中,每一个tr就是arr中的一个索引对应的对象,每一个td就是对象中属性对应的属性值
+                /* 
+                    先定义一个函数
+                    函数的参数就是这个arr数组
+                    函数的返回值就是循环后累加的模板字符串
+                */
+                // 先来打印一下这个返回值,查看下测试结果,输出的的结果都是带tr和td的字符串
+                // 然后将这个字符串通过dom加入到tbody中就可以了
+                let oDiv = document.querySelector('tbody')
+                oDiv.innerHTML = setTable(arr)
+                console.log(setTable(arr))
+                function setTable(array) {
+                    // 先定义一个空字符串
+                    let str = ''
+                    // 再循环这个这个数组,使用forEach来循环数组
+                    // forEach中的item就是数组中的每个索引对应的数据,比如{ id: 1, name: 'Jack', sex: 'male', age: 18, addr: 'Beijing' }........
+                    // forEach中的key就是数组中的索引值,比如:0,1,2,3,4...
+                    arr.forEach(function (item, key) {
+                        // 使用模板字符串
+                        str += `
+                            <tr>
+                                <td>${item.id}</td>
+                                <td>${item.name}</td>
+                                <td>${item.sex}</td>
+                                <td>${item.age}</td>
+                                <td>${item.addr}</td>
+                            </tr>
+                        `
+                    })
+                    // 循环完之后再返回这个字符串
+                    return str
+                }
+
+                /* 
+                    总结:动态渲染
+                        实际项目中,页面内容往往都是根据后端数据库数据动态渲染生成的
+                        数据库中有什么数据内容,页面就渲染生成什么页面内容
+                        当我们的内容发生改变的时候,不需要手动修改页面html标签内容,只需要后端程序更新数据库数据就可以了
+                        根据数据库数据 动态渲染生成页面
+                        数据库数据结构二阶段都是数组中存储对象
+                            每一个数组中的对象,对应的是一组内容/tr li
+                            对象中的键值对,对应的是一个具体数据内容
+                            实际项目中,键值对数据只会多不会少
+                        具体是通过循环遍历向字符串拼接内容
+                            具体的拼接内容,要根据实际项目需求决定
+                */
+            </script>
+        </table>
+    </body>
+</html>
