@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            html {
+                font-size: 62.5%;
+            }
+            table {
+                border-spacing: 0;
+                border-collapse: collapse;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                /* border-right: 1px solid rgb(167, 164, 164); */
+            }
+            table tr td {
+                border-right: 1px solid rgb(167, 164, 164);
+                width: 15rem;
+                height: 5rem;
+                text-align: center;
+                font-size: 1.4rem;
+                background-color: beige;
+            }
+            table tr td:last-child {
+                border-right: none;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>序号</td>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>年龄</td>
+                <td>地址</td>
+            </tr>
+        </table>
+        <script>
+            let arr = [
+                { id: 1, name: 'Jack', sex: 'male', age: 18, addr: 'Beijing' },
+                { id: 2, name: 'Tom', sex: 'male', age: 19, addr: 'ShangHai' },
+                { id: 3, name: 'Tom', sex: 'male', age: 19, addr: 'ShangHai' },
+                { id: 4, name: 'Tom', sex: 'male', age: 19, addr: 'ShangHai' },
+                { id: 5, name: 'Tom', sex: 'male', age: 19, addr: 'ShangHai' },
+            ]
+        </script>
+    </body>
+</html>
