@@ -54,6 +54,32 @@
                 { id: 4, name: 'Tom', sex: 'male', age: 19, addr: 'ShangHai' },
                 { id: 5, name: 'Tom', sex: 'male', age: 19, addr: 'ShangHai' },
             ]
+            /* 
+                将这个方法封装到函数中
+            */
+            // 获取这个table这个dom
+            let oDov = document.querySelector('table')
+            // console.log(oDov)
+            oDov.innerHTML = add(arr)
+            function add(arr) {
+                // 创建一个空字符串
+                let str = ''
+                // 循环这个数组
+                arr.forEach(function (item, key) {
+                    // 利用模板字符串循环添加字符
+                    str += `
+                <tr>
+                    <td>${item.id}</td>
+                    <td>${item.name}</td>
+                    <td>${item.sex}</td>
+                    <td>${item.age}</td>
+                    <td>${item.addr}</td>
+                </tr>
+                `
+                })
+                return str
+            }
+            console.log(add(arr))
         </script>
     </body>
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function fun(num) {
+                num--
+                if (num >= 1) {
+                    fun(num)
+                }
+                console.log(num)
+            }
+            fun(5) /* 0 1 2 3 4 */
+            /* 
+                递归的最大特点
+                    进入递归  由外而内
+                    跳出递归  由内而外
+            */
+        </script>
+    </body>
+</html>
