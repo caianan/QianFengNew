@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                累加求和 使用递归方法实现
+
+                递归累加求和的核心思想
+                    1-100 的累加求和可以看成1-99的累加求和,再加上100
+                    1-99 的累加求和可以看成1-98的累加求和,再加上 99
+                    1-n的累加求和可以堪称1--n-1的累加求和,再加上n
+            */
+            function add(num) {
+                if (num === 1) {
+                    return 1
+                }
+                return add(num - 1) + num
+            }
+            console.log(add(5))
+            /* 
+                add(5)
+                    return 的结果是 add(4)+5
+                                    add(4) return的结果是 add(3)+4
+                                                        add(3) return的结果是 add(2)+3
+                                                                            add(2) return的结果是 add(1)+3
+                                                                                                add(1) return的结果是 1 
+                反推
+                    add(1) ---> 1 
+                    add(2) ---> add(1) + 2 = 1 + 2 
+                    add(3) ---> add(2) + 3 = 1 + 2 + 3
+                    add(4) ---> add(3) + 4 = 1 + 2 + 3 + 4
+                    add(5) ---> add(4) + 5 = 1 + 2 + 3 + 4 + 5
+            */
+            /* 
+                递归求阶乘
+                    5的阶乘 就是 5*4*3*2*1 
+                    4的阶乘 就是 4*3*2*1
+                    3的阶乘 就是 3*2*1
+                    2的阶乘 就是 2*1
+                    1的阶乘 就是 1
+
+                阶乘递归的规律
+                    n的阶乘 就是 n-1的阶乘*n
+            */
+            function factorial(num) {
+                if (num === 1) {
+                    return 1
+                }
+                return factorial(num - 1) * num
+            }
+            console.log(factorial(5))
+            /* 
+                
+            */
+        </script>
+    </body>
+</html>
