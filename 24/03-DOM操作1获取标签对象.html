@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div>I am ONE</div>
+        <div>I am TWO</div>
+        <div>I am THREE</div>
+        <div>I am FOUR</div>
+        <script>
+            let oDiv = document.querySelector('div')
+            console.log(oDiv) // 直接输出内容
+            console.dir(oDiv) // 输出原始数据形式
+            let oDivs = document.querySelectorAll('div')
+            console.log(oDivs)
+        </script>
+        <script>
+            /* 
+                DOM操作1获取html文件中的标签对象
+                    也就是我们要想操作标签要先获取标签
+                    获取标签的结果 只有两种情况
+                        1.一个独立的html标签对象
+                            标签对象中包含了很多这个标签的相关信息和相关的操作方法
+                            只有标签对象中包含的操作方法才能使用
+                            有一些特殊的标签,有一些特殊的属性可以使用
+                        2.一个伪数组
+                            也就是以数组的形式存储标签对象
+                            数组的数据单元存储的一个独立的htm1标签对象
+                    DOM操作本质上不是操作数组是操作一个独立的标签对象
+                    如果获取的结果是伪数组,需要循环遍历或者通过[]语法对一个独立的标签进行操作
+                获取标签对象的方法
+                    querySelector('条件')
+                        获取符合条件的第一个对象
+                        即使HTML文档中有多个符合条件的对象
+                        也只会获取符合条件的第一个对象
+                        如果没有符合条件的标签对象,执行结果是null
+                    querySelectorAll('条件')
+                        获取所有符合条件的标签对象
+                        是一个伪数组
+                        如果没有符合条件的标签对象,执行结果是length为0的空数组
+                    支持所有HTML和css的语法形式,获取标签对象或者标签对象结果集
+                    支持的条件
+                        1.标签名称
+                        2.id属性值
+            */
+        </script>
+    </body>
+</html>

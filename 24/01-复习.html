@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /* 
+                1.基本概念
+                    所谓的递归函数,是函数的一种特殊的定义执行方式
+                    本质上还是一个函数
+                    执行方式调用方式与普通函数是完全一致的
+                2.递归函数的语法
+                    再函数内部调用执行函数本身
+                    function fun(){
+                        fun()
+                    }
+                3.递归函数的特点
+                    a.写递归先写终止
+                        所谓的先定义终止,就是先定义不再执行递归的情况
+                        所谓的终止,也就是return的不再是递归程序的调用
+                        就是 return 一个数值
+                        function fun(num){
+                            // 当num等于1或者num等于2的时候
+                            // 不再是调用递归,只是定义返回值1
+                            // 这就是所谓的递归
+                            if(num === 1 || num === 2) {
+                                return 1
+                            }
+                            return fun(num - 1)+fun(num- 2)
+                        }
+                    b.递归程序的执行
+                        进入递归 从外而内
+                        结束递归 从内而外
+                    c.如果有程序在递归之下执行,必须要先执行完递归,才会再执行相应的程序
+                        function fun(num){
+                            console.log(num)
+                            num--
+                            if(num>=1){
+                                fun(num)
+                            }
+                        }
+                        fun(5)  先执行输出,再执行递归
+                        function fun(num){
+                            num--
+                            if(num>=1){
+                                fun(num)
+                            }
+                            console.log(num)
+                        }
+                        fun(5) 0,1,2,3,4,5 先执行递归,再执行输出
+            */
+        </script>
+    </body>
+</html>
