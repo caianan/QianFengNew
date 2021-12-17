@@ -1,58 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        [name="h1"]{
-            color: red;
-        }
-    </style>
-</head>
-<body>
-    <div>我是div1</div>
-    <div>我是div2</div>
-    <div>我是div3</div>
-    <div>我是div4</div>
-    <div class="d1 d2 d3 d4">我是class</div>
-    <h1 name="h1">我是h1标签</h1>
-    <ul>
-        <li>我是第一个li</li>
-        <li>我是第二个li</li>
-        <li>我是第三个li</li>
-        <li>我是第四个li</li>
-        <li>我是第五个li</li>
-    </ul>
-    <script>
-        // 只会获取第一个符合条件的div对象，就算当前有多个div标签，也只会获取获取第一个div标签
-        // 即使当前有4个div标签，也只会获取第一个div标签
-        var oDiv = document.querySelector('div')
-        console.log(oDiv); //直接输出内容
-        console.dir(oDiv) // 输出原始的数据形式
-        // 获取所有的div标签对象，组成一个伪数组，
-        // oDivs中存储的是伪数组，伪数组的数据单元存储的是div标签对象
-        var oDivs = document.querySelectorAll('div')
-        console.log(oDivs);
-        console.dir(oDivs)
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            [name='h1'] {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div>我是div1</div>
+        <div>我是div2</div>
+        <div>我是div3</div>
+        <div>我是div4</div>
+        <div class="d1 d2 d3 d4">我是class</div>
+        <h1 name="h1">我是h1标签</h1>
+        <ul>
+            <li>我是第一个li</li>
+            <li>我是第二个li</li>
+            <li>我是第三个li</li>
+            <li>我是第四个li</li>
+            <li>我是第五个li</li>
+        </ul>
+        <script>
+            // 只会获取第一个符合条件的div对象，就算当前有多个div标签，也只会获取获取第一个div标签
+            // 即使当前有4个div标签，也只会获取第一个div标签
+            var oDiv = document.querySelector('div')
+            console.log(oDiv) //直接输出内容
+            console.dir(oDiv) // 输出原始的数据形式
+            // 获取所有的div标签对象，组成一个伪数组，
+            // oDivs中存储的是伪数组，伪数组的数据单元存储的是div标签对象
+            var oDivs = document.querySelectorAll('div')
+            console.log(oDivs)
+            console.dir(oDivs)
 
-        // 按照class类名来获取
-        // 写一个class属性值 就可以匹配到
-        var oDivClass = document.querySelector('.d1')
-        // 写多个class属性值，反而会匹配不到
-        var oDivClass2 = document.querySelector('.d1 d2 d3 d4')
-        console.log(oDivClass);
-        console.log(oDivClass2);
+            // 按照class类名来获取
+            // 写一个class属性值 就可以匹配到
+            var oDivClass = document.querySelector('.d1')
+            // 写多个class属性值，反而会匹配不到
+            var oDivClass2 = document.querySelector('.d1 d2 d3 d4')
+            console.log(oDivClass)
+            console.log(oDivClass2)
 
-        // 获取标签中第一个 属性和属性值匹配的选择器
-        var oH1 = document.querySelector('[name="h1"]')
-        console.log(oH1);
+            // 获取标签中第一个 属性和属性值匹配的选择器
+            var oH1 = document.querySelector('[name="h1"]')
+            console.log(oH1)
 
-        // 
-
-    </script>
-    <script>
-        /*
+            //
+        </script>
+        <script>
+            /*
             DOM操作1
                 获取HTML文件中的标签对象，也就是我们要想操作标签，要先获取标签
                     正确获取标签的结果：
@@ -83,7 +82,7 @@
                                     document.querySelector('#属性值')
                                     获取页面中第一个 id属性值 符合的标签对象
                                 3.class属性值
-                                    document.querySelector('属性值')
+                                    document.querySelector('.属性值')
                                     获取页面中第一个 class属性值 符合的标签对象
                                     class类名可以有多个属性值，往往只定义匹配多个属性值中的一个
                                 4.标签的属性和属性值
@@ -101,6 +100,6 @@
 
                                 
         */
-    </script>
-</body>
+        </script>
+    </body>
 </html>

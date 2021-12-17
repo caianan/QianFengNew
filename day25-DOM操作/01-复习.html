@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-        /*
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
             基本步骤
                 1.获取html标签对象
                     获取结果是一个独立标签对象 或者是 标签对象集合也就是一个伪数组
@@ -24,21 +24,21 @@
                         获取符合条件的所有标签对象，执行结果是伪数组，可以使用forEach循环遍历
                         所谓的条件可以是任意html和css支持的语法形式 
                     旧的获取标签对象的方法
-                        var 变量 = document.getElementById('id属性值')
+                        var 变量 = document.getElementById('#id值')
                         根据id属性值 获取 标签对象
                         执行结果是一个具体的标签对象
-                        var 变量 = document.getElementByClassName('id属性值')
+                        var 变量 = document.getElementByClassName('.类名')
                         根据class属性值 获取 标签对象
                         执行结果是一个标签对象结果集 —————— 伪数组
                         不能使用forEach循环遍历
-                        var 变量 = document.getElementByTagName('id属性值')
+                        var 变量 = document.getElementByTagName('标签名')
                         根据 标签名称 获取标签对象
                         执行结果是一个标签对象结果集 —————— 伪数组
                         不能使用forEach循环遍历
-                        var 变量 = document.getElementByTagName('id属性值')
+                        var 变量 = document.getElementByName('id属性值')
                         根据 name属性值 获取标签对象
                         执行结果是一个标签对象结果集 —————— 伪数组
-                        不能使用forEach循环遍历
+                        可以使用forEach循环遍历
                     设定标签的css样式
                         标签对象.style.属性 = 属性值
                             属性不支持-语法 必须写成驼峰命名法
@@ -53,12 +53,13 @@
                     2.JavaScript语法 操作设定标签对象，只能是一个独立的标签对象，不能直接对标签对象结果集 伪数组进行操作
                         oLis[0].style.color = 'red'
                         通过[]语法 获取一个独立的标签对象进行操作
-                        oLis.forEach(function(item,key){}) 通过循环语法 获取一个独立的标签对象 进行操作,item是循环的标签对象，key是索引值
+                        oLis.forEach(function(item,key){}) 通过循环语法 获取一个独立的标签对象 进行操作,
+                        item是循环的标签对象，key是索引值
                         for(var i=0;i<=oLis.length-1,i++){}
-                        for(var item in oLis){item是标签对象}
+                        for(var item of oLis){item是标签对象}
 
 
         */
-    </script>
-</body>
+        </script>
+    </body>
 </html>

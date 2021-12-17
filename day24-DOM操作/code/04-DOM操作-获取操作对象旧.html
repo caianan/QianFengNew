@@ -1,59 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        [name="h1"]{
-            color: red;
-        }
-    </style>
-</head>
-<body>
-    <div name="div-name" class="d1" id="div1">我是div</div>
-    <h1 name="h1">我是h1标签</h1>
-    <ul>
-        <li>我是第一个li</li>
-        <li>我是第二个li</li>
-        <li>我是第三个li</li>
-        <li>我是第四个li</li>
-        <li>我是第五个li</li>
-    </ul>
-    <script>
-        // 通过id属性值获取标签对象
-        var oDiv = document.getElementById('div1')
-        console.log(oDiv);
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            [name='h1'] {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div name="div-name" class="d1" id="div1">我是div</div>
+        <h1 name="h1">我是h1标签</h1>
+        <ul>
+            <li>我是第一个li</li>
+            <li>我是第二个li</li>
+            <li>我是第三个li</li>
+            <li>我是第四个li</li>
+            <li>我是第五个li</li>
+        </ul>
+        <script>
+            // 通过id属性值获取标签对象
+            var oDiv = document.getElementById('div1')
+            console.log(oDiv)
 
-        // 通过class属性值获取匹配的标签对象，获取的结果是一个伪数组,不能使用forEach循环遍历
-        var oDivs = document.getElementsByClassName('d1')
-        // for ... in 循环的索引下标会多一些，不推荐使用
-        // for (const key in oDivs) {
-        //     console.log(key);
-        // }
-        for (const iterator of oDivs) {
-            console.log(iterator);
-        }
-        for (let index = 0; index < oDivs.length; index++) {
-            const element = oDivs[index];
-            console.log(element);
-            
-        }
-        // 通过标签名称获取匹配的标签对象,获取的结果是一个伪数组,不能使用forEach循环遍历
-        var oTags = document.getElementsByTagName('div')
-        for (const iterator of oTags) {
-            console.log(iterator);
-        }
-        console.log('========================');
-        // 只支持name属性，属性值，其他属性不支持,获取的结果是一个伪数组，可以使用forEach进行循环遍历
-        var oNames = document.getElementsByName('div-name')
-        oNames.forEach(element => {
-            console.log(element);
-        });
-
-    </script>
-    <script>
-        /*
+            // 通过class属性值获取匹配的标签对象，获取的结果是一个伪数组,不能使用forEach循环遍历
+            var oDivs = document.getElementsByClassName('d1')
+            // for ... in 循环的索引下标会多一些，不推荐使用
+            // for (const key in oDivs) {
+            //     console.log(key);
+            // }
+            for (const iterator of oDivs) {
+                console.log(iterator)
+            }
+            for (let index = 0; index < oDivs.length; index++) {
+                const element = oDivs[index]
+                console.log(element)
+            }
+            // 通过标签名称获取匹配的标签对象,获取的结果是一个伪数组,不能使用forEach循环遍历
+            var oTags = document.getElementsByTagName('div')
+            for (const iterator of oTags) {
+                console.log(iterator)
+            }
+            console.log('========================')
+            // 只支持name属性，属性值，其他属性不支持,获取的结果是一个伪数组，可以使用forEach进行循环遍历
+            var oNames = document.getElementsByName('div-name')
+            oNames.forEach((element) => {
+                console.log(element)
+            })
+        </script>
+        <script>
+            /*
             document.querySelector 是新的获取方法，在IE浏览器不适用
             旧的获取标签对象的方法
                 document.getElementById('id属性值')
@@ -72,6 +70,6 @@
                     获取的结果是一个伪数组，可以使用forEach进行循环遍历
                                 
         */
-    </script>
-</body>
+        </script>
+    </body>
 </html>
