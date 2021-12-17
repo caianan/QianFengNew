@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            color: red;
+        }
+        .div2{
+            width: 200px;
+        }
+        .div3{
+            height: 200px;
+        }
+        .div4{
+            background-color: rgb(238, 196, 196);
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">I am Div</div>
+    <script>
+        var oDiv = document.querySelector('div')
+        // 获取class属性值
+        console.log(oDiv.className);
+        // 设置class属性值，想div有原来的div1 以及新的div2 div3 div4 类名
+        // 不能直接赋值，如果直接赋值 div2 div3 div4会覆盖之前的div1
+        // 可以使用+= 来执行字符串拼接操作
+        // 在新的内容前，多加一个空格 ，与原始属性值间隔
+        // oDiv.className += ' div2 div3 div4'
+
+
+        // JavaScript 定义类的操作方法add
+        // 一次只能添加一个类名
+        oDiv.classList.add('div2')
+        oDiv.classList.add('div3')
+        oDiv.classList.add('div4')
+
+        // ====================================================
+        // 删除多个class类中的一个
+        // 可以使用字符串替换操作 ，将要删除的class类名 替换为 空字符串
+        // var str = oDiv.className;
+        // 删除div3这个类名，就是使用 空字符串 替换div3
+        // str = str.replace(' div3','')
+        // console.log(str);
+        // 将结果赋值给class
+        // oDiv.className = str
+
+        // 整合的写法,用一行代码来完成操作
+        // oDiv.className = oDiv.className.replace(' div2','')
+
+        // JavaScript提供的方法,可以一次删除多个类名，使用逗号间隔
+        // oDiv.classList.remove('div3','div4')
+
+
+        // ==========================================================
+        // JavaScript提供的方法,class属性值的切换，有这个属性值就删除，没有这个属性值就添加
+        // oDiv.classList.toggle('div3');
+
+    </script>
+    <script>
+        /*
+            标签对象 class属性操作
+                1.class属性也是标签对象 本身就 支持的属性；
+                    但是属性名称是className
+                    因为JavaScript中class用于声明构造函数
+                    标签的class属性就改成了 className
+                2.class属性的属性值可以有多个类名
+                    如果要操作，要注意之前的原始类名
+        */
+    </script>
+</body>
+</html>

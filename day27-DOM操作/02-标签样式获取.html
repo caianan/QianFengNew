@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./tools.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+<body>
+    <div>I am div</div>
+    <script>
+        /* 使用定义好的函数，获取标签对象的属性 */
+        var oDiv = document.querySelector('div')
+        console.log(myGetStyle(oDiv,'width'));
+    </script>
+    <script>
+        /* 
+            标签样式的设定和获取
+                标签样式的设定
+                    标签对象.style.属性 = 属性值
+                标签样式的获取
+                    标签对象.style.属性     可以获取标签样式属性的属性值，但是只能获取 行内语法设定的css样式
+
+                    windows.getComputedStyle(标签对象).属性
+                        可以获取所有标签对象被设定的属性值
+                        获取标签css属性值推荐方法
+                        这是普通浏览器使用的
+                    标签对象.currentStyle.属性 
+                        低版本IE浏览器使用的
+                    实际项目中要写一个兼容语法
+
+        */
+
+    </script>
+</body>
+</html>

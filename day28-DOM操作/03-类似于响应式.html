@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: pink;
+            border: 1px solid pink;
+            width: 80%;
+            height: 100px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+    <script>
+        /* 
+        2.有一个div 
+            当浏览器视窗窗口 宽度>1200 是整个浏览器80%宽度
+            当浏览器视窗窗口 宽度 在 1200 和992之间 是整个浏览器60%宽度
+            当浏览器视窗窗口 宽度 在 992 和 768 之间 是整个浏览器40%宽度
+            当浏览器视窗窗口 宽度 < 768 之间 是整个浏览器20%宽度
+        
+        */
+       
+        // 获取div标签对象
+        var oDiv = document.querySelector('div')
+        // 添加 onresize事件
+        window.onresize = function () {
+            var width = document.documentElement.clientWidth
+            console.log(width);
+            if (width > 1200) {
+                // console.log('宽度>1200 是整个浏览器80%宽度');
+                oDiv.style.width = '80%'
+            } else if (width > 992) {
+                // console.log('宽度 在 1200 和992之间');
+                oDiv.style.width = '60%'
+            } else if (width > 768) {
+                // console.log('992 和 768 之间');
+                oDiv.style.width = '40%'
+            } else if (width < 768) {
+                // console.log('宽度 < 768 之间 ');
+                oDiv.style.width = '20%'
+            }
+        }
+    </script>
+</body>
+</html>

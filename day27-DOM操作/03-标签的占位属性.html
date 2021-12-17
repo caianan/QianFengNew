@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            padding: 50px;
+            border: 10px solid #333;
+            max-width: 150px;
+
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var oDiv = document.querySelector('div')
+        console.log(oDiv.offsetWidth); //220
+        console.log(oDiv.offsetHeight); //220
+
+        //宽高+padding
+        console.log(oDiv.clientWidth); //200
+        console.log(oDiv.clientHeight); //200
+
+        // 边框线上 左宽度
+        console.log(oDiv.clientTop);    //10
+        console.log(oDiv.clientLeft);   //10
+
+        // 距离定位父级的间距 与定位父级的间距
+        console.dir(oDiv);
+    </script>
+    <script>
+        /* 
+            所谓的标签的占位 指的是 标签 盒子模型的占位属性值
+                内容(宽高)  padding border margin
+
+                宽高+padding+border
+                    标签对象.offsetWidth    横向
+                    标签对象.offsetHeight   纵向
+                宽高+padding
+                    标签对象.clientWidth    横向
+                    标签对象.clientHeight   纵向
+                
+                边框线上 左宽度
+                    标签对象.clientTop
+                    标签对象.clientLeft
+                
+                距离定位父级的间距
+                    标签对象.offsetTop  上间距
+                    标签对象.offsetLeft 左间距
+                    这个所谓的定位父级 和 css中定位父级不同
+                    标签对象中有个一属性 offsetParent 表示的定位父级
+        
+        */
+    </script>
+</body>
+</html>

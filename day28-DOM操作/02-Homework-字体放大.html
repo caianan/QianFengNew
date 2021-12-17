@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        height: 200px;
+        width: 500px;
+        margin-top: 10px;
+        border: 1px solid pink;
+      }
+    </style>
+    <script src="./tool.js"></script>
+  </head>
+  <body>
+    <button name="bigger">Big</button>
+    <button name="smaller">Small</button>
+    <div>I am Div</div>
+    <script>
+      // 获取对应的标签对象
+      var oBtnBigger = document.querySelector('[name="bigger"]')
+      var oBtnSmaller = document.querySelector('[name="smaller"]')
+      var oDiv = document.querySelector('div')
+
+      // 给oBtnBigger添加点击事件
+      oBtnBigger.addEventListener('click', function () {
+        var size = parseInt(myGetStyle(oDiv, 'fontSize'))
+        console.log(size)
+        // 每次点击的时候，size自增10
+        size += 10
+        // 如果增加超过100，size则始终赋值为100
+        if (size > 100) {
+          size = 100
+        }
+        // 将size最后的结果作为oDiv标签对象fontSize的属性值
+        oDiv.style.fontSize = size + 'px'
+      })
+
+      // 给oBtnBigger添加点击事件
+      oBtnSmaller.addEventListener('click', function () {
+        var size = parseInt(myGetStyle(oDiv, 'fontSize'))
+        console.log(size)
+        // 每次点击的时候，size自减10
+        size -= 10
+        if (size < 20) {
+          size = 20
+        }
+        // 将size最后的结果作为oDiv标签对象fontSize的属性值
+        oDiv.style.fontSize = size + 'px'
+      })
+    </script>
+  </body>
+</html>

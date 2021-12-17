@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [name="h1"]{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>我是div1</div>
+    <div>我是div2</div>
+    <div>我是div3</div>
+    <div>我是div4</div>
+    <div class="d1 d2 d3 d4">我是class</div>
+    <h1 name="h1">我是h1标签</h1>
+    <ul>
+        <li>我是第一个li</li>
+        <li>我是第二个li</li>
+        <li>我是第三个li</li>
+        <li>我是第四个li</li>
+        <li>我是第五个li</li>
+    </ul>
+    <script>
+        // 只会获取第一个符合条件的div对象，就算当前有多个div标签，也只会获取获取第一个div标签
+        // 即使当前有4个div标签，也只会获取第一个div标签
+        var oDiv = document.querySelector('div')
+        console.log(oDiv); //直接输出内容
+        console.dir(oDiv) // 输出原始的数据形式
+        // 获取所有的div标签对象，组成一个伪数组，
+        // oDivs中存储的是伪数组，伪数组的数据单元存储的是div标签对象
+        var oDivs = document.querySelectorAll('div')
+        console.log(oDivs);
+        console.dir(oDivs)
+
+        // 按照class类名来获取
+        // 写一个class属性值 就可以匹配到
+        var oDivClass = document.querySelector('.d1')
+        // 写多个class属性值，反而会匹配不到
+        var oDivClass2 = document.querySelector('.d1 d2 d3 d4')
+        console.log(oDivClass);
+        console.log(oDivClass2);
+
+        // 获取标签中第一个 属性和属性值匹配的选择器
+        var oH1 = document.querySelector('[name="h1"]')
+        console.log(oH1);
+
+        // 
+
+    </script>
+    <script>
+        /*
+            DOM操作1
+                获取HTML文件中的标签对象，也就是我们要想操作标签，要先获取标签
+                    正确获取标签的结果：
+                        1.一个独立的HTML标签对象，例如 document.querySelector('div')
+                          标签对象中包含了很多这个标签的相关信息和相关的操作方法
+                          只有 标签对象中 包含的操作方法，我们才能使用
+                          有一些特殊的标签，有一些特殊的属性可以使用
+                        2.一个伪数组，存储标签对象集合
+                          也就是 以数组的形式 存储 标签对象
+                          数组的数据单元 存储的 一个独立的html标签对象
+
+                        DOM操作 本质上 不是操作数组 是操作一个独立的标签对象
+                        如果获取的结果是伪数组，需要循环遍历，或者通过[]语法 对一个独立的标签进行操作
+                    获取标签对象的方法、语法
+                        推荐方法 
+                            document.querySelector('条件') 
+                                获取符合条件的第一个标签对象，即使HTML文档中有多个 符合条件的标签对象，也只会获取第一个符合条件的标签对象
+                                如果没有符合条件的标签对象，执行结果是 null
+                            document.querySelectorAll('条件')
+                                支持所有HTML和CSS的语法形式 获取标签对象 或者标签对象结果集
+                                如果没有符合条件的标签对象，执行结果是 length长度为0的空数组
+                                【重点】 获取的伪数组，可以使用forEach方法来循环
+                            支持的条件
+                                1.标签名称
+                                    document.querySelector('div')
+                                    获取页面中第一个标签名称是div的标签对象
+                                2.id属性值
+                                    document.querySelector('#属性值')
+                                    获取页面中第一个 id属性值 符合的标签对象
+                                3.class属性值
+                                    document.querySelector('属性值')
+                                    获取页面中第一个 class属性值 符合的标签对象
+                                    class类名可以有多个属性值，往往只定义匹配多个属性值中的一个
+                                4.标签的属性和属性值
+                                    document.querySelector('[属性="属性值"]')
+                                    没有这个属性或者是自定义属性，只要写了都会支持获取
+                                    获取标签中第一个 属性和属性值匹配的选择器
+                                        [属性] 
+                                        [属性="属性值"] 
+                                        [属性^="属性值"]
+                                        [属性$="属性值"]
+                                        [属性*="属性值"]
+                                5.css结构选择器
+                                    document.querySelectorAll('ul>li') 子集
+                                    document.querySelectorAll('ul li') 后代
+
+                                
+        */
+    </script>
+</body>
+</html>

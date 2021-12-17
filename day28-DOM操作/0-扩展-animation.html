@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: wheat;
+            margin: 10px;
+        }
+        div:nth-child(1){
+            animation-name: moveone;
+            animation-duration: 3s;
+            /* 要和循环的属性一起使用 */
+            animation-direction: alternate;
+            animation-iteration-count: 2;
+        }
+        div:nth-child(2){
+            animation-name: movetwo;
+            animation-duration: 3s;
+            animation-timing-function: linear;
+            animation-timing-function: steps(6);
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            
+        }
+        div:nth-child(2):hover{
+            animation-play-state:paused;
+        }
+        @keyframes moveone {
+            from{
+                width: 100px;
+                background: tomato;
+            }
+            to{
+                width: 600px;
+                background: turquoise;
+            }
+        }
+        @keyframes movetwo {
+            0%{
+                width: 100px;
+                background: violet;
+            }
+            30%{
+                width: 300px;
+                background: rgb(130, 238, 144);
+            }
+            60%{
+                width: 400px;
+                background: rgb(130, 141, 238);
+            }
+            100%{
+                width: 600px;
+                background: rgb(206, 238, 130);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div>13</div>
+    <div>14</div>
+    <div>15</div>
+    <div>16</div>
+    <div>17</div>
+    <div>18</div>
+    <div>19</div>
+    <div>20</div>
+    <!-- 
+
+        animation:动画效果，通常可transition结合使用
+            animation-name:动画的名称
+            animation-duration:动画的时间
+            animation-timing-function:动画的运动轨迹
+                linear
+                steps()
+            animation-delay: 1s; 
+            animation-iteration-count:元素播放动画的循环次数，infinite 无线循环
+            animation-direction:动画的方向
+                normal：默认值
+                alternate：动画播放在第偶数次向前播放，第奇数次向反方向播放
+            animation-play-state:该属性规定动画正在运行还是暂停
+                paused 暂停
+                running 运行
+            animation-fill-mode:
+                forwards：动画执行到最后一帧的状态
+        @Keyframes:关键帧
+            @keyframes mymove{
+                from{初始状态的属性}
+                to{结束状态的属性}
+            }
+            @keyframes mymove{
+                0%{初始状态的属性}
+                100%{结束状态的属性}
+            }(中间可以添加关键帧)
+     -->
+</body>
+</html>

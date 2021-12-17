@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      td {
+        width: 100px;
+        height: 50px;
+        font-size: 30px;
+        border: 1px solid #000;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <td>序号</td>
+          <td>姓名</td>
+          <td>年龄</td>
+          <td>性别</td>
+          <td>地址</td>
+          <td>操作</td>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      // 定义一个数据，莫伊数据库数据
+      var arr = [
+        { id: 1, name: 'jack', age: 18, sex: 'F', addr: 'Beijing' },
+        { id: 2, name: 'James', age: 18, sex: 'F', addr: 'Beijing' },
+        { id: 3, name: 'Anna', age: 18, sex: 'M', addr: 'Beijing' },
+        { id: 4, name: 'Fox', age: 18, sex: 'F', addr: 'Beijing' },
+        { id: 5, name: 'Tom', age: 18, sex: 'F', addr: 'Beijing' },
+      ]
+      // 获取tBody对象
+      var oTbody = document.querySelector('tbody')
+      set_table(arr, oTbody)
+      // 定义一个函数set_table,将arr中的数据,动态加入到表单中
+      function set_table(arr, element) {
+        var str = ''
+        arr.forEach(function (item) {
+          str += `
+                <tr>
+                    <td>${item.id}</td>
+                    <td>${item.name}</td>
+                    <td>${item.age}</td>
+                    <td>${item.sex}</td>
+                    <td>${item.addr}</td>
+                    <td><button>删除</button></td>
+                </tr>
+            `
+        })
+        // 将循环得到的str,添加到element对象上
+        element.innerHTML = str
+        // 在element上添加str后,调用set_click_evenment函数,这样在动态渲染数据的时候,就可以添加上点击事件
+        // 不会再出现重新复制后,点击事件消失的情况了
+        set_click_evenment(arr, element)
+      }
+
+      // 在定义一个函数,给button加上点击事件
+      function set_click_evenment(arr, element) {
+        // 获取element中的所有button对象
+        var oBtns = element.querySelectorAll('button')
+        oBtns.forEach(function (item, key) {
+          item.addEventListener('click', function () {
+            /* 
+                点击删除键后,将行数据删除掉,也就是将传入的那条数组的数据删除掉
+                数组中删除元素的方法:arr.splice(删除元素的起始位置,需要删除的个数)
+                在循环的过程中,button的索引值,和数据的索引值相同,所以可以根据key值来删除原来的数组元素
+            */
+            // 在删除前显示弹窗,确定返回true,取消返回false,返回再根据返回的值判断是否继续执行程序
+            var bool = window.confirm('删除后数据无法恢复,您是否确定删除?')
+            if (!bool) {
+              return
+            }
+            arr.splice(key, 1)
+            set_table(arr, element)
+          })
+        })
+      }
+      /* 
+        总结思路:
+            因为执行删除操作后,要重新 动态渲染页面,会生成全新的页面,
+            之前绑定事件的标签都会变成新的标签,因此给标签绑定事件的操作,必须要和动态渲染生成页面的函数绑定一起操作
+            
+      */
+    </script>
+  </body>
+</html>

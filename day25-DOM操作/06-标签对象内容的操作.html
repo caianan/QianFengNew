@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        I am div
+        <p>I am P in div</p>
+        <span>I am span in div</span>
+    </div>
+    <input type="text"> <button>click</button>
+    <script>
+        // 获取input标签对象
+        var oInput = document.querySelector('input')
+        console.log(oInput.value); 
+        // 一个空的input标签，初始状态是没有数值的，获取的结果是空字符串
+        // 实际项目中，一般是配合事件来获取数据
+        // 获取button标签对象
+        var oBtn = document.querySelector('button')
+        oBtn.addEventListener('click',function () {
+            console.log(oInput.value -0);
+        })
+        
+        // 获取div标签对象
+        var oDiv = document.querySelector('div')
+
+        // 获取
+        console.log(oDiv.innerHTML);
+        console.log(oDiv.innerText);
+
+        // 设定：执行的是全覆盖写入，会覆盖之前存储的内容
+        // 如果需要在原始内容基础上拼接新的内容，可以使用+= 操作
+
+        // innerHTML 支持解析标签 输入的超链接 会按照 超链接标签效果执行
+        // oDiv.innerHTML = '<a href="https://www.baidu.com">百度</a>';
+        oDiv.innerHTML += '<a href="https://www.baidu.com">百度</a>';
+
+        // innerText 不支持解析标签，输入的超链接只会作为字符执行
+        // oDiv.innerText = '<a href="https://www.baidu.com">百度</a>'
+
+
+
+    </script>
+    <script>
+        /*
+            标签对象，内容的操作
+                内容一般分成两类
+                    标签的内容
+                        一对标签之间的内容
+                        方法一：标签对象.innerHTML  
+                            获取当前标签中的标签内容，以及嵌套的标签名称和标签内容
+                            写在这个标签里面的所有内容都获取，甚至换行和空格
+
+                            设定时：支持解析标签，设定的标签名可以按照标签效果来执行
+                        方法二：标签对象.innerText
+                        都是标签对象，本身就具有的属性
+                            只获取当前标签中的标签内容，以及嵌套标签的标签内容
+                            不获取嵌套标签的标签名称，只要字别的不要
+
+                            设定时：不支持解析标签，设定的标签名称只会按照字符来执行
+                        innerHTML和innerText 做写入操作时
+                            如果是 = 执行的是 覆盖操作 会覆盖原始内容
+                            如果是 += 执行的是 拼接操作 在原始内容后，拼接新的内容
+                            这两种操作，实际项目中都会有，要看具体的项目需求
+                    标签的数据
+                        input等标签中存储的输入的数据数值
+                        var 变量 = 标签对象.value  获取
+                        标签对象.value = 数值       设定
+                        必须注意：
+                            标签原始状态是没有数据输入的
+                            input标签输入的数据，一定是字符串类型
+                            如果是数值，必须转化 ，转化的方法： -0 
+
+        */
+    </script>
+</body>
+</html>

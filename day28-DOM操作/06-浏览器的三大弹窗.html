@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 警告框
+        // window.alert('警告框内容')
+        // 输入框,在输入框输入的内容，存储在变量中
+        // var val = window.prompt('请您输入内容')
+        // console.log(val);
+        // 确认框
+        var bool = window.confirm('您确定要删除嘛')
+        console.log(bool);
+    </script>
+    <script>
+        /* 
+            浏览器的三大弹窗
+                window.alert()  警告弹窗
+                window.prompt() 输入框，
+                    输入的数据，可以使用变量来存储
+                    输入的任何数据，都是以字符串存储
+                    如果需要获取数值，可以使用number(变量)、变量-0 变量*1
+                window.confirm()    确认框
+                    弹出两个按钮，一个确定，一个取消
+                        点击确定：执行结果返回值是 True
+                        点击取消：执行结果返回值是 False
+                            
+
+            特别说明：
+                JavaScript有一个顶级对象 window
+                存储所有关于浏览器的操作方法
+                存储在 windwo中的 函数方法，如果需要调用，可以不写window
+                    window.alert()  / alert() 都可以
+        */
+    </script>
+</body>
+</html>

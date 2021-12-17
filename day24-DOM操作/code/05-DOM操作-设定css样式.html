@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>我是div</div>
+    <script>
+        // 获取标签对象
+        var oDiv = document.querySelector('div')
+        console.dir(oDiv)
+        // 设定标签对象的css样式
+        oDiv.style.width = '100px'
+        oDiv.style.height = '100px'
+        oDiv.style.background = 'pink'
+        oDiv.style.fontSize = '20px'
+        oDiv.style.color = 'rgb(200,200,200)'
+    </script>
+    <script>
+        /*
+            获取了标签对象后，就可以设定标签对象的CSS样式
+            可以设定所有你需要设定的CSS支持的样式
+
+            设定css样式的语法形式
+                标签对象.sytle.属性 = 属性值
+                注意：设定的是 标签的 行内样式/内联样式
+                    1.属性必须携程小驼峰 borderColor ---- border-top
+                    2.如果属性值需要写px，一定要写px
+                        fontSize = '100px'
+                    3.如果有字符，一定是字符串格式
+                        fontSize = '100px'
+                        opacity = .5
+                    4.可以设定 复合属性的属性值
+                        设定语法和css样式设定语法完全相同
+                        border = '1px solid #000'
+                        background = 'url(地址) no-repeat center / 100px 100px'
+                    5.一次只能设定一个css样式属性和属性值
+                        如果需要设定多个属性值，必须要一个一个设定
+
+        */
+    </script>
+</body>
+</html>

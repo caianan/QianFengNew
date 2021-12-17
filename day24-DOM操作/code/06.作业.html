@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <div name="nav001">我是div-001</div>
+            <div name="nav002">我是div-002</div>
+            <div name="nav003">我是div-003</div>
+        </li>
+        <li>number two</li>
+        <li>number three</li>
+        <li class="li">number four</li>
+        <li class="li">number five</li>
+        <div>I am father</div>
+    </ul>
+    <script>
+        // 1.获取第一个li标签
+        var oLi = document.querySelector('li')
+        // oLi.style.color = 'red'
+
+        // 获取所有li标签
+        // var oLis = document.querySelectorAll('li')
+        // oLis.forEach(element => {
+        //     element.style.color = 'blue'
+        // });
+
+        // ul下面的所有div标签
+        // var divGer = document.querySelectorAll('ul div')
+        // divGer.forEach(element => {
+        //     element.style.color = 'pink'
+        // });
+
+        // li下面的所有div标签
+        // var divGer = document.querySelectorAll('li>div')
+        // divGer.forEach(element => {
+        //     element.style.color = 'pink'
+        // });
+
+        // 获取name属性 = nav003 的标签对象
+        // var nameDiv = document.querySelector('[name="nav003"]')
+        // nameDiv.style.color = 'red'
+
+        // 获取类名为li所有标签对象
+        // var classDiv = document.querySelectorAll('.li')
+        // classDiv.forEach(element => {
+        //     element.style.color = 'blue'
+        //     element.style.backgroundColor = 'green'
+        //     element.style.width = '100px'
+        //     element.style.height = '100px'
+        //     element.style.border = '1px solid black'
+        //     element.style.fontSize = '14px'
+        // });
+
+        // ul中有五个li，给这5个li设定不同的字体颜色
+        var oLis = document.querySelectorAll('li')
+        oLis.forEach(element => {
+            
+            element.style.color = '' 
+        });
+    </script>
+    <script>
+        /*
+            1.练习使用所有语法获取标签对象
+            2.给div标签设定宽、高、背景图片、字体大小、字体颜色、边框
+            3.ul中有五个li，给这5个li设定不同的字体颜色
+                要获取ul>li标签伪数组，通过循环遍历设定
+            4.之前设定随机颜色的函数，配合随机颜色函数给h1标签设定岁集颜色
+                也就是每次刷新页面都会有一个随机颜色
+        */
+    </script>
+</body>
+</html>

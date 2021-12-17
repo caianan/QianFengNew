@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            margin: 10px;
+            transition-duration: 2s;
+        }
+        div:nth-child(1):hover{
+            width: 600px;
+        }
+        div:nth-child(2):hover{
+            width: 600px;
+            transition-timing-function: ease;
+        }
+        div:nth-child(9):hover{
+            width: 600px;
+            transition: 2s linear;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        transiton:过渡动画
+            需要注意的点：必须要有事件触发，例如hover
+            过渡效果分为两种情况：
+                1.希望鼠标滑过、移开都有效果，就在元素本身添加transition
+                2.希望鼠标滑过有效果，移开没有效果，就在hover的地方添加transition
+                transition只能实现一种状态到另外一种状态的改变
+            transiton-property:需要过度的样式（all||[attr]||none） 默认是all
+            transiton-duration:运动时间 默认是0s
+            transiton-delay:延迟时间 默认是0s
+            transiton-timing-function:运动形式 默认是ease
+                ease：慢速开始，然后变快，然后慢速结束
+                linear：匀速
+                ease-in：加速
+                ease-out：减速
+                ease-in-out：先加速再减速
+                cubic-bezier：贝塞尔曲线
+                steps：实现一个关键逐帧动画
+            transiton-delay:延迟
+        transform:转换动画
+        
+
+     -->
+
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div>13</div>
+    <div>14</div>
+    <div>15</div>
+    <div>16</div>
+    <div>17</div>
+    <div>18</div>
+    <div>19</div>
+    <div>20</div>
+</body>
+</html>

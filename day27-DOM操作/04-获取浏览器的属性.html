@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 5000px;
+            height: 5000px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 包含滚动条的可视范围 宽高
+        console.log(window.innerWidth);
+        console.log(window.innerHeight);
+        // 不包含滚动条的可视范围 宽高
+        console.log(document.documentElement.clientWidth);
+        console.log(document.documentElement.clientHeight);
+
+        // 获取浏览器页面内容上卷的高度 左移的高度
+        console.log(document.documentElement.scrollTop);
+        console.log(document.documentElement.scrollLeft);
+
+        // 浏览器视窗窗口大小改变
+        window.onresize = function () {
+            console.log('浏览器视窗change');
+        }
+        window.onscroll = function () {
+            console.log('浏览器scroll');
+        }
+    </script>
+    <script>
+        /* 
+            获取浏览器属性
+                1.视窗窗口的宽度、高度
+                    包含滚动条  
+                        window.innerWidth
+                        window.innerHeight
+                    不包含滚动条
+                        document.documentElement.clientWidth 兼容语法 document.body.clientWidth
+                        document.documentElement.clientHeight       document.body.clientHeignt
+                        兼容的是没有文档类型声明的情况
+                2.获取浏览器页面内容上卷的高度 左移的高度
+                    document.documentElement.scrollTop 兼容语法 document.body.scrollTop
+                    document.documentElement.scrollLeft 兼容语法 document.body.scrollLeft
+            介绍两个浏览器的事件
+                浏览器视窗窗口大小改变事件，一旦浏览器窗口大小改变，就会触发事件
+                    window.onresize = function(){}
+                浏览器页面滚动事件，一旦浏览器滚动，就会触发事件
+                    window.onscroll = function(){}
+        */
+    </script>
+</body>
+</html>

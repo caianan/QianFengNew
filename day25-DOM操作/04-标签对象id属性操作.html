@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div">I am div</div>
+    <script>
+        var oDiv = document.querySelector('div')
+        // 获取 id 属性的属性值
+        console.log(oDiv.id);
+        // 设定id属性的属性值
+        // 这里的赋值操作是覆盖赋值
+        // 也就是会覆盖之前id的属性值
+        oDiv.id = 1
+        console.log(oDiv.id);
+    </script>
+    <script>
+        /*
+            标签对象 id属性操作
+                标签对象的id属性是标签对象本身就支持的一个属性
+                在标签对象中本来就有这个属性的设定
+                可以通过这个属性来获取和设定标签对象 id 属性的属性值
+                    var 变量 = 标签对象.id  获取id属性属性值
+                    标签对象.id = 数值  设置id属性值
+        */
+    </script>
+</body>
+</html>

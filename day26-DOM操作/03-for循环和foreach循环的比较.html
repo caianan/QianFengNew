@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            for循环和forEach循环的比较
+                for循环和forEach循环 都可以 操作 循环遍历 数组
+                主要区别除了语法不同外，就是程序的执行原理不同
+                    for循环 是通过 循环生成数组的索引下标 来控制操作数组单元
+                    for循环的执行可以通过 控制 循环遍历index的数值来控制
+                    例如：数组坍塌时 可以执行 循环遍历-- 再次循环触发删除单元的数组位置
+                    也就是 for循环 循环遍历数组，循环过程是可控制的
+                    并且for循环 可以使用 break 和 continue 来控制
+
+                    forEach 是JavaScript程序 定于好的循环程序
+                    是通过控制数组的 指针 来实现数组单元的 循环遍历
+                    循环过程是不可控制的，只会从第一个单元依次循环至最后一个单元
+                    并且不支持break 和 continue 关键词
+            实际项目中，如果不需要终止操作 来提高执行效率，推荐使用forEach
+            如果需要终止程序 来提高效率，使用for循环配合break
+        */
+    </script>
+</body>
+</html>

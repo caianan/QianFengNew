@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      td {
+        width: 100px;
+        height: 50px;
+        font-size: 30px;
+        border: 1px solid #000;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <td>序号</td>
+          <td>姓名</td>
+          <td>年龄</td>
+          <td>性别</td>
+          <td>地址</td>
+          <td>操作</td>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      // 定义一个数据，莫伊数据库数据
+      var arr = [
+        { id: 1, name: 'jack', age: 18, sex: 'F', addr: 'Beijing' },
+        { id: 2, name: 'James', age: 18, sex: 'F', addr: 'Beijing' },
+        { id: 3, name: 'Anna', age: 18, sex: 'M', addr: 'Beijing' },
+        { id: 4, name: 'Fox', age: 18, sex: 'F', addr: 'Beijing' },
+        { id: 5, name: 'Tom', age: 18, sex: 'F', addr: 'Beijing' },
+      ]
+      var oTbody = document.querySelector('tbody')
+      oTbody.innerHTML = set_table(arr)
+      // 获取操作对象,并且给每个操作对象上添加点击事件
+      var oButtons = oTbody.querySelectorAll('button')
+      oButtons.forEach(function (item) {
+        item.addEventListener('click', function () {
+          console.log('666')
+        })
+      })
+      /* 
+        如果oTbody.innerHTML被重新赋值的话,删除按钮上就不会有点击事件
+        所有需要用新的方法来解决这个问题
+      */
+
+      // 定义一个函数
+      function set_table(arr) {
+        var context = ''
+        arr.forEach(function (item) {
+          context += `
+                <tr>
+                    <td>${item.id}</td>    
+                    <td>${item.name}</td>    
+                    <td>${item.age}</td>    
+                    <td>${item.sex}</td>    
+                    <td>${item.addr}</td>    
+                    <td><button>删除</button></td>    
+                </tr>
+            `
+        })
+        return context
+      }
+    </script>
+    <script>
+      /* 
+            table表格的删除效果
+                之前根据数组，动态生成过table表格
+        */
+    </script>
+  </body>
+</html>

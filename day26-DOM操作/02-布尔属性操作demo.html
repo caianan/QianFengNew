@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>
+        <input type="checkbox" name="all" id=""> 全选
+    </label>
+    <button>反选</button>
+    <br>
+    <input type="checkbox" name="other" id="">A
+    <input type="checkbox" name="other" id="">B
+    <input type="checkbox" name="other" id="">C
+    <input type="checkbox" name="other" id="">D
+    <input type="checkbox" name="other" id="">E
+    <input type="checkbox" name="other" id="">F
+    <script>
+        var oIptAll = document.querySelector('[name="all"]');
+        // 设定复选框为选中状态有两种方法
+        // 1.通过HTML来设定，给标签添加checked属性
+        // 2.通过JavaScript来实现：标签对象.布尔属性 = true 就是选中 标签对象.布尔属性 = false 取消
+        // oIptAll.checked = true
+
+        // 标签的布尔属性除了可以设定外，还可以获取属性值
+        // 如果是选中状态，标签对象.布尔属性 获取的结果就是true
+        // 如果是取消状态，标签对象.布尔属性 获取的结果就是false
+
+        // 实现全选功能 
+        var oInpOther = document.querySelectorAll('[name="other"]');
+        oIptAll.addEventListener('click',function () {
+            // 循环遍历伪数组，item是数组单元存储的数据数值，也就是独立的其他input标签对象
+            oInpOther.forEach(function (item) {
+                item.checked = oIptAll.checked
+            })
+        })
+
+        // 实现反选功能
+        var oBtn = document.querySelector('button')
+        // 给button添加点击事件
+        oBtn.addEventListener('click',function () {
+            // 循环遍历所有的伪数组oInpOther
+            // item就是独立的其他input标签对象
+            oInpOther.forEach(function (item) {
+                // 当前item也就是 独立的其他input标签
+                // checked 属性值 就是本身原始checked属性值取反
+                item.checked = !(item.checked)
+            })
+        })
+
+        // 通过循环遍历，给每一个 其他input添加事件
+        // item就是每一独立的其他input标签
+        oInpOther.forEach(function (item) {
+            // 给item 也就是独立的其他input标签，添加点击事件
+            item.addEventListener('click',function () {
+                // 设置变量，记录oIptAll的checked属性
+                // 这个效果类似于，当初写的质数的判断
+                var bool = true;
+                // 循环遍历 oInpOther 数组，获取每一个独立其他input标签 checked属性值
+                // 循环变量index 本质就是 数组的索引下标 范围是0-数组.length-1
+                // 通过[]语法 使用索引下标 也就是i获取数组中 独立的标签对象，oInpOther[index]就是独立的其他input标签对象
+                for (let index = 0; index < oInpOther.length; index++) {
+                    // 判断 如果有其他input标签 checked属性值是false，也就是取消的状态
+                    // 也就是 取消状态 就给bool赋值false
+                    // 并且通过break终止循环的执行
+                    if (oInpOther[index].checked === false) {
+                        bool = false;
+                        break;
+                    }                    
+                }
+                // 如果 其他input都是true，bool最终存储的也是true
+                // 如果 有一个或者多个 其他input结果是false，bool最终存储的也是false
+                // 对应的 全选input checked状态 就会是选中或者取消
+                oIptAll.checked = bool
+            })
+        })
+
+    </script>
+    <script>
+        /*
+            全选按钮思路：
+                点击 全选 input 标签时
+                    让其他所有的input标签 选中状态 和 全选input 选中状态是相同的
+                    也就是：全选input是选中 其他input也是选中 
+                                所谓的选中状态 就是标签 checked属性的属性值 是true
+                           全选input是取消 其他input也是取消
+                                所谓的取消状态 就是标签 checked属性的属性值 是false
+                    也就是 获取 全选input标签 checked属性的属性值
+                    赋值给 所有的 其他的 input标签 checked属性
+                    让全选input标签和其他input标签 checked属性值是完全相同的
+            反选的思路：
+                选中的取消，取消的选中
+                点击反选按钮，让所有的其他input checked 属性值变成当前checked属性值取反
+            其他input的反向操作:
+                点击其他input标签
+                也就是 给每一个其他input标签 添加 点击事件
+                    点击一个其他input
+                        必须要判断 所有的input标签
+                        如果所有的 其他input标签 checked属性值 都是true
+                            也就是都是全选的状态 全选input checked属性值也是true
+                        如果 有 其他input标签 checked属性值 是false
+                            也就是有其他input状态是取消，全选input checked属性值就是false
+
+        */
+
+        // 质数的判断
+        var num = 10;
+        var bool = true;
+        for (let index = 2; index < num.length; index++) {
+            if (num%index===0) {
+                bool = true;
+                break;
+            }            
+        }
+        if (bool) {
+            console.log('${num}是质数');
+        } else {
+            console.log('${num}是合数');
+        }
+    </script>
+</body>
+</html>
