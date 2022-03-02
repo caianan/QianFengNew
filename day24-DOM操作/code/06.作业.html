@@ -18,6 +18,7 @@
             <li class="li">number four</li>
             <li class="li">number five</li>
             <div>I am father</div>
+            <h1>I am H1</h1>
         </ul>
         <script>
             // 1.获取第一个li标签
@@ -58,10 +59,30 @@
             // });
 
             // ul中有五个li，给这5个li设定不同的字体颜色
-            var oLis = document.querySelectorAll('li')
-            oLis.forEach((element) => {
-                element.style.color = ''
-            })
+            // 设置一个随机颜色函数
+            /* function getColor() {
+                // 公式 Math.random() * (max +1 - min) + min
+                var r = Math.floor(Math.random() * 256)
+                var g = Math.floor(Math.random() * 256)
+                var b = Math.floor(Math.random() * 256)
+                return `rgb(${r},${g},${b})`
+            } */
+            // 通过十六进制设置一个随机颜色的函数
+            function getColor() {
+                let str = '0123456789ABCDEFG'
+                let res = '#'
+                for (let i = 0; i < 6; i++) {
+                    let index = Math.floor(Math.random() * str.length)
+                    if (res.includes(str[index])) {
+                        i--
+                        continue
+                    }
+                    res += str[index]
+                }
+                return res
+            }
+            let oH1 = document.querySelector('h1')
+            oH1.style.color = getColor()
         </script>
         <script>
             /*

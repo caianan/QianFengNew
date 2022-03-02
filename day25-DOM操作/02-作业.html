@@ -1,105 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>我是div</div>
-    <ul name="ul1">
-        <li>number one</li>
-        <li>number two</li>
-        <li>number three</li>
-        <li>number four</li>
-        <li>number five</li>
-    </ul>
-    <div>
-        <ul name="ul2">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div>我是div</div>
+        <ul name="ul1">
             <li>number one</li>
             <li>number two</li>
             <li>number three</li>
             <li>number four</li>
             <li>number five</li>
         </ul>
-    </div>
-    <script>
-        // 设定div标签的css样式
-        // 获取div
-        var divObj = document.querySelector('div')
-        divObj.style.border = '1px solid red'
-        divObj.style.height = '100px'
-        divObj.style.width = '100px'
-        divObj.style.color = 'blue'
-        divObj.style.backgroundColor = 'pink'
+        <div>
+            <ul name="ul2">
+                <li>number one</li>
+                <li>number two</li>
+                <li>number three</li>
+                <li>number four</li>
+                <li>number five</li>
+            </ul>
+        </div>
+        <script>
+            // 设定div标签的css样式
+            // 获取div
+            var divObj = document.querySelector('div')
+            divObj.style.border = '1px solid red'
+            divObj.style.height = '100px'
+            divObj.style.width = '100px'
+            divObj.style.color = 'blue'
+            divObj.style.backgroundColor = 'pink'
 
-        // 给ul>li标签，设定css样式
-        // 如果使用document来获取标签对象，获取的是整个HTML文件中，所有符合条件的标签对象
-        //var oUlLis = document.querySelectorAll('ul>li')
-        // console.log(oUlLis);// 这样就会产生10个结果
-        // 解决方法，1.先获取独立的父级标签对象
-        var oUL1 = document.querySelector('[name="ul1"]')
-        var oUL2 = document.querySelector('[name="ul2"]')
-        console.log(oUL1);// 获取到两个独立的ul标签对象
-        console.log(oUL2);// 获取到两个独立的ul标签对象
-        // 2.在 独立的标签对象内，获取标签对象
-        // 也就是之前是document在整个HTML文件内获取标签对象，现在是oUl1或者oUl2中 获取标签对象
-        // 只在oUL1标签对象中获取 li 其他标签中的li标签不要，这样可以避免获取标签的冲突
-        var oLis1 = oUL1.querySelectorAll('li')
-        // console.log(oLis1);
-        var oLis2 = oUL2.querySelectorAll('li')
-        // console.log(oLis2);
+            // 给ul>li标签，设定css样式
+            // 如果使用document来获取标签对象，获取的是整个HTML文件中，所有符合条件的标签对象
+            //var oUlLis = document.querySelectorAll('ul>li')
+            // console.log(oUlLis);// 这样就会产生10个结果
+            // 解决方法，1.先获取独立的父级标签对象
+            var oUL1 = document.querySelector('[name="ul1"]')
+            var oUL2 = document.querySelector('[name="ul2"]')
+            console.log(oUL1) // 获取到两个独立的ul标签对象
+            console.log(oUL2) // 获取到两个独立的ul标签对象
+            // 2.在 独立的标签对象内，获取标签对象
+            // 也就是之前是document在整个HTML文件内获取标签对象，现在是oUl1或者oUl2中 获取标签对象
+            // 只在oUL1标签对象中获取 li 其他标签中的li标签不要，这样可以避免获取标签的冲突
+            var oLis1 = oUL1.querySelectorAll('li')
+            // console.log(oLis1);
+            var oLis2 = oUL2.querySelectorAll('li')
+            // console.log(oLis2);
 
-        // 给标签设定颜色
-        // 方法1：switch 或者 if 判断
-        // oLis1是一个伪数组 其中存储了ul1中 所有的li标签对象，通过循环遍历操作，也可以通过[]索引下标，获取其中一个标签对象来设定
-        // 过[]索引下标,来获取标签对象
-        // oLis1[0].style.color = 'red'
-        // oLis1[1].style.color = 'green'
-        // oLis1[2].style.color = 'blue'
-        // oLis1[3].style.color = 'pink'
-        // oLis1[4].style.color = 'orange'
+            // 给标签设定颜色
+            // 方法1：switch 或者 if 判断
+            // oLis1是一个伪数组 其中存储了ul1中 所有的li标签对象，通过循环遍历操作，也可以通过[]索引下标，获取其中一个标签对象来设定
+            // 过[]索引下标,来获取标签对象
+            // oLis1[0].style.color = 'red'
+            // oLis1[1].style.color = 'green'
+            // oLis1[2].style.color = 'blue'
+            // oLis1[3].style.color = 'pink'
+            // oLis1[4].style.color = 'orange'
 
-        // 循环遍历
-        // 参数1：item存储数值的数据，也就是li标签对象
-        // 参数2：key 存储数值的索引下标
-        oLis1.forEach(function (item,key) {
-            // console.log(item,key);
-            // 可以根据索引下标进行判断
-            switch (key) {
-                case 0:
-                    item.style.color = 'red'
-                    break;
-                case 1:
-                    item.style.color = 'green'
-                    break;
-                case 2:
-                    item.style.color = 'pink'
-                    break;
-                case 3:
-                    item.style.color = 'yellow'
-                    break;
-                case 1:
-                    item.style.color = 'blue'
-                    break;
+            // 循环遍历
+            // 参数1：item存储数值的数据，也就是li标签对象
+            // 参数2：key 存储数值的索引下标
+            oLis1.forEach(function (item, key) {
+                // console.log(item,key);
+                // 可以根据索引下标进行判断
+                switch (key) {
+                    case 0:
+                        item.style.color = 'red'
+                        break
+                    case 1:
+                        item.style.color = 'green'
+                        break
+                    case 2:
+                        item.style.color = 'pink'
+                        break
+                    case 3:
+                        item.style.color = 'yellow'
+                        break
+                    case 1:
+                        item.style.color = 'blue'
+                        break
+                }
+            })
+
+            // 实际项目中，标签的样式等信息一般会存储在一个数组中或是对象中，可以通过数组对象设定标签样式
+            // 数组中有颜色的设定，如果需要获取，需要通过索引下标获取
+            // 要获取yellow 应该是color[0],来获取
+            var color = ['yellow', 'blue', 'red', 'gray', 'green']
+            oLis2.forEach(function (item, key) {
+                item.style.color = color[key]
+            })
+            console.log(setColor())
+            // 颜色的随机函数
+            // ${}新语法, 新增的字符串方法
+            function setColor() {
+                return `rgb(${parseInt(Math.random() * 256)},${parseInt(Math.random() * 256)},${parseInt(
+                    Math.random() * 256
+                )})`
             }
-        })
-
-        // 实际项目中，标签的样式等信息一般会存储在一个数组中或是对象中，可以通过数组对象设定标签样式
-        // 数组中有颜色的设定，如果需要获取，需要通过索引下标获取
-        // 要获取yellow 应该是color[0],来获取
-        var color = ['yellow','blue','red','gray','green']
-        oLis2.forEach(function (item,key) {
-            item.style.color = color[key];
-        })
-        console.log(setColor());
-        // 颜色的随机函数
-        // ${}新语法, 新增的字符串方法
-        function setColor(){
-            return 'rgb(${parseInt(Math.random()*256)},${parseInt(Math.random()*256)},${parseInt(Math.random()*256)})'
-        }
-        
-    </script>
-</body>
+        </script>
+    </body>
 </html>
