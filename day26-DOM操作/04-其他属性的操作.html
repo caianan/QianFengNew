@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div name="div">I am div</div>
-    <a href="http://www.baidu.com">BaiDu</a> <br>
-    <img src="http://p1.music.126.net/dr9lwZeuTDjbVTDaz5K0zQ==/18796151278553471.jpg?param=130y130" alt="">
-    <script>
-        var oDiv = document.querySelector('div')
-        var oA = document.querySelector('a')
-        var oImg = document.querySelector('img')
-        console.log(oDiv.getAttribute('name'));  // res:div
-        console.log(oA.getAttribute('href'));
-        console.log(oImg.getAttribute('src'));
-    </script>
-    <script>
-        /*
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div name="div">I am div</div>
+        <a href="http://www.baidu.com">BaiDu</a> <br />
+        <img src="http://p1.music.126.net/dr9lwZeuTDjbVTDaz5K0zQ==/18796151278553471.jpg?param=130y130" alt="" />
+        <script>
+            var oDiv = document.querySelector('div')
+            var oA = document.querySelector('a')
+            var oImg = document.querySelector('img')
+            console.log(oDiv.getAttribute('name')) // res:div
+            console.log(oA.getAttribute('href'))
+            console.log(oImg.getAttribute('src'))
+            /* 添加自定义属性 */
+            oDiv.setAttribute('index', 0) // setAttribute(name, value),如果属性存在，则替换，如果不存在，则添加
+        </script>
+        <script>
+            /*
             标签对象 属性的操作
                 1.id className title 是所有标签对象都支持的属性，可以直接操作
                     语法
@@ -48,6 +50,6 @@
                         删除
                             标签对象.removeAttribute('属性')
         */
-    </script>
-</body>
+        </script>
+    </body>
 </html>
