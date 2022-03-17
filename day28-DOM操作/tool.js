@@ -4,5 +4,6 @@ function myGetStyle(element,type) {
         return window.getComputedStyle(element)[type] 
     } else {
         return element.currentStyle[type]
+        
     }
 }
