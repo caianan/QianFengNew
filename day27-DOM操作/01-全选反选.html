@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <label> <input type="checkbox" name="all" />全选 </label>
+        <button>反选</button>
+        <br />
+        <input type="checkbox" name="other" id="" />A <input type="checkbox" name="other" id="" />B
+        <input type="checkbox" name="other" id="" />C <input type="checkbox" name="other" id="" />D
+        <input type="checkbox" name="other" id="" />E
+        <script>
+            // 获取全选标签
+            let all = document.querySelector("input[name='all']")
+            // 反选按钮
+            let btn = document.querySelector('button')
+            // 获取其他复选框
+            let other = document.querySelectorAll("input[name='other']")
+            // 全选按钮的点击事件
+            all.addEventListener('click', function () {
+                // 循环遍历其他复选框
+                other.forEach(function (item) {
+                    item.checked = all.checked
+                })
+            })
+            // 反选点击事件
+            btn.addEventListener('click', function () {
+                // 循环遍历其他复选框
+                other.forEach(function (item) {
+                    item.checked = !item.checked
+                })
+                // 如果点击反选后,其他复选框全部选中,则全选按钮也选中
+                // 定义一个变量,用来记录其他复选框是否全部选中
+                let flag = true
+                // 循环遍历其他复选框
+                for (const iterator of other) {
+                    if (iterator.checked === false) {
+                        flag = false
+                        break
+                    }
+                }
+                all.checked = flag
+            })
+            // 其他复选框的点击事件
+            other.forEach(function (item) {
+                // 给每个复选框添加点击事件
+                item.addEventListener('click', function () {
+                    // 定义变量,默认是true
+                    let flag = true
+                    // 循环遍历其他复选框
+                    for (const iterator of other) {
+                        if (iterator.checked === false) {
+                            flag = false
+                            break
+                        }
+                    }
+                    all.checked = flag
+                })
+            })
+        </script>
+    </body>
+</html>

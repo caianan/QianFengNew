@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./tools.js"></script>
-    <style>
-        div{
-            width: 200px;
-            height: 200px;
-            border: 1px solid pink;
-        }
-    </style>
-</head>
-<body>
-    <div>I am div</div>
-    <script>
-        /* 使用定义好的函数，获取标签对象的属性 */
-        var oDiv = document.querySelector('div')
-        console.log(myGetStyle(oDiv,'width'));
-    </script>
-    <script>
-        /* 
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="./tools.js"></script>
+        <style>
+            div {
+                width: 200px;
+                height: 200px;
+                background: red;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <div style="width: 100px; height: 100px; background: red">I am div</div> -->
+        <div>I am div</div>
+        <script>
+            var oDiv = document.querySelector('div')
+            // 标签对象.style.属性 只能获取行内样式.
+            // 其他css语法形式设定的样式,不能获取属性值,执行结果是空字符串
+            console.log(oDiv.style.width) // 100px
+            console.log(oDiv.style.height) // 100px
+            console.log(oDiv.style.background) // red
+
+            // 其他css语法形式设定的样式获取的方法
+            console.log(window.getComputedStyle(oDiv).width) // 100px
+            console.log(window.getComputedStyle(oDiv).height) // 100px
+            console.log(window.getComputedStyle(oDiv).background) // rgb(255, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box
+            // console.log(myGetStyle(oDiv,'width'));
+        </script>
+        <script>
+            /* 
             标签样式的设定和获取
                 标签样式的设定
                     标签对象.style.属性 = 属性值
@@ -38,7 +48,6 @@
                     实际项目中要写一个兼容语法
 
         */
-
-    </script>
-</body>
+        </script>
+    </body>
 </html>
