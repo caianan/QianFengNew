@@ -15,26 +15,46 @@
                 age: 36,
                 height: 185,
             }
-            // for in循环,可以循环对象
+            // for in循环,可以循环对象的key
             for (const key in obj) {
                 console.log(key, obj[key])
             }
+            console.log('===============')
+
             for (const key in arrs) {
                 console.log(key, arrs[key])
                 // 这个key是字符串
             }
-
             console.log('==================')
+
             // for of循环，可以循环数组，不能循环对象
             for (const value of arrs) {
                 console.log(value)
             }
-            console.log('==================')
+            console.log('=========for of=========')
 
             // forEach,可以循环数组，不能循环对象
             arrs.forEach(function (value, key, arrs) {
                 console.log(value, key, arrs)
             })
+
+            // for in循环，for of循环，forEach循环的区别
+            // for in循环可以循环对象的key，for of循环可以循环数组的值，forEach循环可以循环数组的值和索引
+            // 但是forEach循环可以接收三个参数，第一个参数是当前的值，第二个参数是当前的索引，第三个参数是数组本身
+            // 所以for in循环和forEach循环可以循环对象，但是for of循环只能循环数组
+            // 举例：
+            let obj2 = {
+                name: 'Jackson',
+                sex: 'M',
+                age: 36,
+                height: 185,
+                address: {
+                    city: 'Beijing',
+                },
+            }
+            for (const key in obj2) {
+                console.log(key, obj2[key])
+            }
         </script>
     </body>
 </html>
